@@ -29,6 +29,7 @@ header {
       gap: 26px;
       button {
         border: 0;
+        cursor: pointer;
         display: flex;
         gap: 6.3px;
         align-items: center;
@@ -43,6 +44,7 @@ header {
       color: #1d2125;
       text-align: center;
       font-size: 13.344px;
+      cursor: pointer;
       font-weight: 600;
       background-color: rgb(0, 160, 255);
       border: 0;
@@ -193,6 +195,7 @@ aside {
 .lower_header .left_header {
   padding: 18px 10px 12px;
   display: flex;
+  align-items: center;
 }
 
 .left_header_p {
@@ -216,6 +219,7 @@ aside {
   margin-left: 13px;
   display: flex;
   min-width: 32px;
+  height: 42px;
   max-width: 400px;
   padding: 0px 12.11px 0px 12px;
   justify-content: center;
@@ -242,10 +246,10 @@ aside {
 }
 
 .right_header {
+  display: flex;
   align-items: center;
   text-align: right;
   justify-content: right;
-  display: flex;
   position: absolute;
   right: 0;
 }
@@ -285,9 +289,14 @@ aside {
     width: 48px;
     height: 48px;
     font-size: 26px;
+    color: #fff;
     padding-left: 16px;
     margin-inline: 12px;
   }
+}
+.afer_options{
+  width: 33px !important;
+  height: 33px !important;
 }
 .add_acc {
   display: flex;
