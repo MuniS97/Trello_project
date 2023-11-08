@@ -1,61 +1,147 @@
 <!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="./main.css">
-  </head>
-  <body>
+<html lang="en">
 
-    <main>
-      <div class="container">
-        <div class="box">
-          <div class="item">
-            <div class="item_top">
-              <span>go home</span>
-              <button><img src="public/Icon.png" alt=""></button>
-            </div>
-            <div class="item_mid">
-              <input type="text" placeholder="Вступительное собрание"></input>
-            </div>
-            <div class="item_bot">
-              <button>+ Добавить карточку</button>
-              <img src="public/Frame.png" alt="">
-            </div>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vite App</title>
+	<link rel="stylesheet" href="./main.css">
+	<link rel="stylesheet" href="./style.scss">
+</head>
+
+<body>
+
+	<header>
+		<div class="left">
+			<div class="logo">
+				<img class="frame" src="./imgs/Frame.svg" alt="">
+				<img class="logo_img" src="./imgs/pseudo.png" alt="">
+			</div>
+			<div class="btns">
+				<button>Рабочие пространства <img src="./imgs/arrow_down.svg" alt=""></button>
+				<button>Недавние <img src="./imgs/arrow_down.svg" alt=""></button>
+				<button>В избранном <img src="./imgs/arrow_down.svg" alt=""></button>
+				<button>Шаблоны <img src="./imgs/arrow_down.svg" alt=""></button>
+			</div>
+			<button class="create">Создать</button>
+		</div>
+		<div class="right">
+			<div class="searcher">
+				<img width="16px" height="16px" src="./imgs/searcher_icon.svg" alt="">
+				<input class="searcher_inp" type="text" name="searcher" placeholder="Поиск">
+			</div>
+			<div class="user_info">
+				<img src="./imgs/bell.svg" alt="">
+				<img src="imgs/q_mark.svg" alt="">
+				<p class="acc_logo">P</p>
+			</div>
+		</div>
+	</header>
+	<aside class="hide_main">
+		<div class="aside hide_aside">
+		<div class="prodigy">
+			<p>P</p>
+			<ul type="none">
+				<li>PRODIGY: рабочее пространство</li>
+				<li>Бесплатно</li>
+			</ul>
+			<img class="close_aside" src="./imgs/arrow_left.svg" alt="">
+		</div>
+		<ol type="none">
+			<li>
+				<span><img src="./imgs/desks_icon.svg" alt=""> Доски</span>
+			</li>
+			<li>
+				<span>
+					<img src="./imgs/Participants_icon.svg" alt="">
+					Участники
+				</span>
+				<img src="./imgs/plus.svg" alt="">
+			</li>
+			<li>
+				<span>
+					<img src="./imgs/settings_icon.svg" alt="">
+					Настройки рабочего пространства
+				</span>
+				<img src="./imgs/arrow_down.svg" alt="">
+			</li>
+			<li>
+				Режимы просмотра рабочего пространства
+			</li>
+			<li>
+				<span>
+					<img src="./imgs/table_icon.svg" alt="">
+					Таблица
+				</span>
+			</li>
+			<li>
+				<span>
+					<img src="./imgs/calendar_icon.svg" alt="">
+					Календарь
+				</span>
+			</li>
+			<li>
+				Мои доски
+				<img src="./imgs/plus.svg" alt="">
+			</li>
+			<li>
+				<span>
+					<div class="bg_div"> <img src="" alt=""></div>
+					desk
+				</span>
+			</li>
+		</ol>
+		</div>
+		<img class="open_aside" id="show" width="32px" height="32px" src="./imgs/arrow_right-removebg-preview.png" alt="">
+	</aside>
+	<main>
+    <div class="container">
+      <div class="box">
+        <div class="item">
+          <div class="item_top">
+            <span>go home</span>
+            <button><img src="public/Icon.png" alt=""></button>
           </div>
-          <div class="item">
-            <div class="item_top">
-              <span>В процессе</span>
-              <button><img src="public/Icon.png" alt=""></button>
-            </div>
-            <div class="item_mid">
-              <input type="text" placeholder="go home"></input>
-            </div>
-            <div class="item_bot">
-              <button>+ Добавить карточку</button>
-              <img src="public/Frame.png" alt="">
-            </div>
+          <div class="item_mid">
+            <input type="text" placeholder="Вступительное собрание"></input>
           </div>
-          <div class="item">
-            <div class="item_top">
-              <span>Готово</span>
-              <button><img src="public/Icon.png" alt=""></button>
-            </div>
-            <div class="item_mid"></div>
-            <div class="item_bot">
-              <button>+ Добавить карточку</button>
-              <img src="public/Frame.png" alt="">
-            </div>
-          </div>
-          <div class="add_column">
-            <button>+ Добавить ещё одну колонку</button>
+          <div class="item_bot">
+            <button>+ Добавить карточку</button>
+            <img src="public/Frame.png" alt="">
           </div>
         </div>
+        <div class="item">
+          <div class="item_top">
+            <span>В процессе</span>
+            <button><img src="public/Icon.png" alt=""></button>
+          </div>
+          <div class="item_mid">
+            <input type="text" placeholder="go home"></input>
+          </div>
+          <div class="item_bot">
+            <button>+ Добавить карточку</button>
+            <img src="public/Frame.png" alt="">
+          </div>
+        </div>
+        <div class="item">
+          <div class="item_top">
+            <span>Готово</span>
+            <button><img src="public/Icon.png" alt=""></button>
+          </div>
+          <div class="item_mid"></div>
+          <div class="item_bot">
+            <button>+ Добавить карточку</button>
+            <img src="public/Frame.png" alt="">
+          </div>
+        </div>
+        <div class="add_column">
+          <button>+ Добавить ещё одну колонку</button>
+        </div>
       </div>
-    </main>
+    </div>
+  </main>
+	<script type="module" src="/main.js"></script>
+</body>
 
-    <script type="module" src="/main.js"></script>
-  </body>
 </html>
