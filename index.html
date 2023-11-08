@@ -1,16 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="./main.css">
-  </head>
-  <body>
-    <p>this is boss's branch</p>  
-    
 
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vite App</title>
+	<link rel="stylesheet" href="./main.css">
+	<link rel="stylesheet" href="./style.scss">
+</head>
+
+<body>
+
+	<header>
+		<div class="left">
+			<div class="logo">
+				<img class="frame" src="./imgs/Frame.svg" alt="">
+				<img class="logo_img" src="./imgs/pseudo.png" alt="">
+			</div>
+			<div class="btns">
+				<button>Рабочие пространства <img src="./imgs/arrow_down.svg" alt=""></button>
+				<button>Недавние <img src="./imgs/arrow_down.svg" alt=""></button>
+				<button>В избранном <img src="./imgs/arrow_down.svg" alt=""></button>
+				<button>Шаблоны <img src="./imgs/arrow_down.svg" alt=""></button>
+			</div>
+			<button class="create">Создать</button>
+		</div>
+		<div class="right">
+			<div class="searcher">
+				<img width="16px" height="16px" src="./imgs/searcher_icon.svg" alt="">
+				<input class="searcher_inp" type="text" name="searcher" placeholder="Поиск">
+			</div>
+			<div class="user_info">
+				<img src="./imgs/bell.svg" alt="">
+				<img src="imgs/q_mark.svg" alt="">
+				<p class="acc_logo">P</p>
+			</div>
+		</div>
+	</header>
+
+	<script type="module" src="/main.js"></script>
+</body>
+
 </html>
