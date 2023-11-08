@@ -95,7 +95,7 @@ boxes.forEach(box => {
     })
     box.classList.add('box_selected')
     choosed_avatar = box.childNodes[1].src.split(5175).at(-1)
-    console.log(box.childNodes[1].src.split(5175).at(-1));
+    console.log(box.childNodes[1].src.split('img/').at(-1));
   }
 } 
 )
