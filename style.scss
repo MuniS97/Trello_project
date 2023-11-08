@@ -80,20 +80,20 @@ header {
       display: flex;
       align-items: center;
       gap: 14px;
-      p {
-        border-radius: 100%;
-        color: lightgray;
-        background-color: orangered;
-        width: 30px;
-        padding-left: 10px;
-        height: 30px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-      }
     }
   }
+}
+.acc_logo {
+  border-radius: 100%;
+  color: lightgray;
+  background-color: orangered;
+  width: 30px;
+  padding-left: 10px;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 aside {
   position: relative;
@@ -178,8 +178,8 @@ aside {
 }
 
 .contentFlex {
-  width: 80% !important;
   transition: 0.8s;
+  width: 80% !important;
 }
 
 .lower_header {
@@ -281,13 +281,14 @@ aside {
 
 .acc {
   display: flex;
+  .acc_logo{
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+    padding-left: 16px;
+    margin-inline: 12px;
+  }
 }
-
-.acc img {
-  width: 48px;
-  height: 48px;
-}
-
 .add_acc {
   display: flex;
   height: 32px;
@@ -327,6 +328,7 @@ aside {
   width: 100%;
   position: absolute;
   right: 0;
+  transition: 0.8s;
   top: 50px;
 }
 
