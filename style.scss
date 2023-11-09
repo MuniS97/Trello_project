@@ -429,7 +429,7 @@ aside {
   margin: 8px;
 }
 
-.item_mid input {
+.item_mid .task {
   background-color: #22272b;
   border: none;
   border-radius: 5px;
@@ -437,6 +437,11 @@ aside {
   width: 100%;
   color: #b6c2cf;
   outline: none;
+  min-height: 100px;
+  cursor: grab;
+}
+.item_mid .task:active {
+  cursor: grabbing;
 }
 
 .item_bot {
