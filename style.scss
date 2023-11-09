@@ -230,6 +230,17 @@ aside {
   background-color: white;
 }
 
+.acc{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add_one{
+  color: white;
+  font-size: 18px;
+}
+
 .options img {
   width: 26px;
   height: 26px;
@@ -463,3 +474,159 @@ aside {
   cursor: pointer;
   padding: 6px 10px;
 }
+
+
+
+
+
+
+
+
+.modal_main{
+  width: 400px;
+  background-color: rgb(46, 44, 44);
+  border-radius: 8px;
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 50px;
+  position: relative;
+  height: 450px;
+  overflow-y: scroll;
+  scroll-padding: 50px;
+  visibility: hidden;
+}
+
+.modal_add{
+  width: 700px;
+  background-color: rgb(46, 44, 44);
+  border-radius: 8px;
+  position: fixed !important;
+  left: 50%;
+  translate: -50%;
+  top: 180px;
+  padding: 50px;
+  position: relative;
+  height: 450px;
+  overflow-y: scroll;
+  scroll-padding: 50px;
+  visibility: hidden;
+}
+
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 8px; /* ширина для вертикального скролла */
+  height: 8px; /* высота для горизонтального скролла */
+
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #a59f9f77;
+  border-radius: 9em;
+  box-shadow: inset 1px 1px 10px #818181;
+  
+  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #646466; 
+}
+
+
+
+
+
+form {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+  
+}
+
+input, select{
+  width: 100%;
+  background-color: #000;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  color: white;
+
+}
+
+.button_x{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.693);
+  font-size: 18px;
+}
+
+.create_btn{
+  background-color: #000;
+  color: white;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  margin-left: 50%;
+  translate: -50%;
+}
+
+.block{
+  animation: lll .5s linear forwards;
+}
+
+@keyframes lll {
+  to{
+      visibility: visible;
+      width: 700px;
+  }
+}
+
+.modal_add img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.box_avatar{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box_selected{
+  background-color: blue;
+}
+
+.avatars{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.none{
+  display: none;
+}
+
+.visible{
+  display: block;
+}
+
+
+
+
+
+
