@@ -428,6 +428,11 @@ aside {
   cursor: pointer;
   margin: 8px;
 }
+.item_mid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
 .item_mid .task {
   background-color: #22272b;
