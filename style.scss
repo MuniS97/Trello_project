@@ -432,6 +432,7 @@ aside {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-height: 50px;
 }
 
 .item_mid .task {
