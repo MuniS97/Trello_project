@@ -55,7 +55,7 @@ for (let key in res) {
 open_modal_btn.onclick = () => {
   modal_main.classList.add('block')
 }
-close_modal_btn.forEach( btn => {
+close_modal_btn.forEach(btn => {
   btn.onclick = () => {
     btn.parentElement.classList.remove('block')
   }
@@ -90,14 +90,14 @@ let choosed_avatar
 
 boxes.forEach(box => {
   box.onclick = () => {
-    boxes.forEach(box=> {
+    boxes.forEach(box => {
       box.classList.remove('box_selected')
     })
     box.classList.add('box_selected')
     choosed_avatar = box.childNodes[1].src.split(5175).at(-1)
     console.log(box.childNodes[1].src.split('img/').at(-1));
   }
-} 
+}
 )
 
 form_add.onsubmit = (e) => {
@@ -119,3 +119,10 @@ form_add.onsubmit = (e) => {
   modal_add.classList.remove('block')
 }
 
+
+const dropdown = document.querySelector('.dropdown');
+const arrowIcon = document.querySelector('.after_options');
+
+arrowIcon.addEventListener('click', () => {
+  dropdown.classList.toggle('active');
+});

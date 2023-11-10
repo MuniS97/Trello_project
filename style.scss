@@ -7,6 +7,40 @@
 body {
   background-color: #cd5a91;
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.after_options {
+  cursor: pointer;
+}
+
+.under_arrow {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1;
+  width: 200px;
+  border-radius: 12px;
+}
+
+.under_arrow p {
+  margin: 0;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.dropdown.active .under_arrow {
+  display: block;
+}
+
+
 header {
   width: 100%;
   padding: 8px 12px;
