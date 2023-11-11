@@ -119,3 +119,40 @@ form_add.onsubmit = (e) => {
   modal_add.classList.remove('block')
 }
 
+
+let item_mids = document.querySelectorAll('.item_mid')
+let tasks = document.querySelectorAll('.task')
+let selected
+
+console.log(item_mids);
+
+item_mids.forEach(item => {
+  item.ondragenter = (e) => {
+    e.preventDefault()
+  }
+  item.ondragover = (e) => {
+    e.preventDefault()
+  }
+  item.ondrop = () => {
+    item.append(selected)
+    selected = null
+  }
+})
+
+tasks.forEach(task=> {
+  task.ondragstart = (e) => {
+    selected = e.target
+    setTimeout(()=> {
+      task.style.display = 'none'
+    }, 0)
+  }
+  task.ondragend = (ev) => {
+    task.style.display = 'block'
+
+    const {x, y} = ev
+
+    task.style.top = y+'px'
+    task.style.left = x+'px'
+  }
+})
+
