@@ -133,19 +133,15 @@
         </div>
         <div class="container">
             <div class="box">
+
+
                 <div class="item">
                     <div class="item_top">
                         <span>go home</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid">
-                        <div class="task" >
-                            task
-                        </div>
-                        <div class="task" >
-                            task
-                        </div>
-                        <div class="task" >
+                    <div class="item_mid" id="new_task">
+                        <div class="task" id="task" draggable="true">
                             task
                         </div>
                     </div>
@@ -154,34 +150,36 @@
                         <img src="./public/img/Frame.png" alt="">
                     </div>
                 </div>
+
+
                 <div class="item">
                     <div class="item_top">
                         <span>В процессе</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid">
-
-
+                    <div class="item_mid" id="in_progress">
                     </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
                         <img src="./public/img/Frame.png" alt="">
                     </div>
                 </div>
+
+
                 <div class="item">
                     <div class="item_top">
                         <span>Готово</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid">
-
-                        
+                    <div class="item_mid" id="done">
                     </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
                         <img src="./public/img/Frame.png" alt="">
                     </div>
                 </div>
+
+
                 <div class="add_column">
                     <button>+ Добавить ещё одну колонку</button>
                 </div>

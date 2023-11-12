@@ -36,13 +36,33 @@ close_aside.onclick = () => {
   }, 1000);
 };
 
+let new_task = document.querySelector('#new_task')
+let in_progress = document.querySelector('#in_progress')
+let done = document.querySelector('#done')
+let task = document.querySelector('.task');
 
+new_task.ondragover = allowDrop;
+in_progress.ondragover = allowDrop;
+done.ondragover = allowDrop;
 
+function allowDrop(e) {
+  e.preventDefault();
+}
 
+task.ondragstart = drag;
 
+function drag(e) {
+  e.dataTransfer.setData('id', e.target.id)
+}
 
+new_task.ondrop = drop;
+in_progress.ondrop = drop;
+done.ondrop = drop;
 
-
+function drop(e) {
+  let itemId = e.dataTransfer.getData('id')
+  e.target.append(document.getElementById(itemId))
+}
 
 let res = ['alex', 'adams', 'john', 'mike']
 
