@@ -509,6 +509,7 @@ aside {
   overflow-y: scroll;
   scroll-padding: 50px;
   visibility: hidden;
+  z-index: 1000;
 }
 
 .modal_add{
@@ -595,6 +596,7 @@ input, select{
 
 .block{
   animation: lll .5s linear forwards;
+  z-index: 10000;
 }
 
 @keyframes lll {
@@ -639,6 +641,17 @@ input, select{
 }
 
 
+.bg_for_modal{
+  width: 100%;
+  height: 100%;
+
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+}
 
 
 
