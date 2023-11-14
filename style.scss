@@ -179,6 +179,9 @@ aside {
   }
 }
 
+.blue_bg {
+  background-color: blue;
+}
 .contentFlex {
   transition: 0.8s;
   width: 80% !important;
@@ -627,7 +630,6 @@ input, select{
   justify-content: space-between;
 }
 
-
 .none{
   display: none;
 }
@@ -635,9 +637,4 @@ input, select{
 .visible{
   display: block;
 }
-
-
-
-
-
 

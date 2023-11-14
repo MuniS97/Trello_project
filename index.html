@@ -2,266 +2,290 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="./style.scss">
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vite App</title>
+	<link rel="stylesheet" href="./main.css">
+	<link rel="stylesheet" href="./style.scss">
 </head>
 
 <body>
 
-    <header>
-        <div class="left">
-            <div class="logo">
-                <img class="frame" src="./public/img/Frame.svg" alt="">
-                <img class="logo_img" src="./public/img/pseudo.png" alt="">
-            </div>
-            <div class="btns">
-                <button>Рабочие пространства <img src="./public/img/arrow_down.svg" alt=""></button>
-                <button>Недавние <img src="./public/img/arrow_down.svg" alt=""></button>
-                <button>В избранном <img src="./public/img/arrow_down.svg" alt=""></button>
-                <button>Шаблоны <img src="./public/img/arrow_down.svg" alt=""></button>
-            </div>
-            <button class="create">Создать</button>
-        </div>
-        <div class="right">
-            <div class="searcher">
-                <img width="16px" height="16px" src="./public/img/searcher_icon.svg" alt="">
-                <input class="searcher_inp" type="text" name="searcher" placeholder="Поиск">
-            </div>
-            <div class="user_info">
-                <img src="./public/img/bell.svg" alt="">
-                <img src="./public/img/q_mark.svg" alt="">
-                <p class="acc_logo">P</p>
-            </div>
-        </div>
-    </header>
-    <aside class="hide_main">
-        <div class="aside hide_aside">
-            <div class="prodigy">
-                <p>P</p>
-                <ul type="none">
-                    <li>PRODIGY: рабочее пространство</li>
-                    <li>Бесплатно</li>
-                </ul>
-                <img class="close_aside" src="./public/img/arrow_left.svg" alt="">
-            </div>
-            <ol type="none">
-                <li>
-                    <span><img src="./public/img/desks_icon.svg" alt=""> Доски</span>
-                </li>
-                <li>
-                    <span>
-                        <img src="./public/img/Participants_icon.svg" alt="">
-                        Участники
-                    </span>
-                    <img src="./public/img/plus.svg" alt="">
-                </li>
-                <li>
-                    <span>
-                        <img src="./public/img/settings_icon.svg" alt="">
-                        Настройки рабочего пространства
-                    </span>
-                    <img src="./public/img/arrow_down.svg" alt="">
-                </li>
-                <li>
-                    Режимы просмотра рабочего пространства
-                </li>
-                <li>
-                    <span>
-                        <img src="./public/img/table_icon.svg" alt="">
-                        Таблица
-                    </span>
-                </li>
-                <li>
-                    <span>
-                        <img src="./public/img/calendar_icon.svg" alt="">
-                        Календарь
-                    </span>
-                </li>
-                <li>
-                    Мои доски
-                    <img src="./public/img/plus.svg" alt="">
-                </li>
-                <li>
-                    <span>
-                        <div class="bg_div"> <img src="" alt=""></div>
-                        desk
-                    </span>
-                </li>
-            </ol>
-        </div>
-        <img class="open_aside" id="show" width="32px" height="32px" src="./public/img/arrow_right-removebg-preview.png"
-            alt="">
-    </aside>
-    <main class="content">
-        <div class="lower_header">
-            <div class="left_header">
-                <p class="left_header_p">
-                    desk
-                </p>
-                <img src="./public/img/left_header_star.png" alt="">
-                <img src="./public/img/left_header_friends.png" alt="">
-                <div class="options">
-                    <img src="./public/img/left_header_analystic.png" alt="">
-                    <p>По доске</p>
-                </div>
-                <img class="afer_options" src="./public/img/arrow.png" alt="">
-            </div>
-            <div class="right_header">
-                <img src="./public/img/right_header_rockets.png" alt="">
-                <img src="./public/img/right_header_storm.png" alt="">
-                <div class="menu_filter">
-                    <img src="./public/img/right_header_menu.png" alt="">
-                    <p>
-                        Фильтры
-                    </p>
-                </div>
-                <span class="arrow_two">|</span>
-                <div class="acc">
-                    <img src="./public/img/right_header_acc.png" alt="" width="80px">
-                    <p class="add_one">+1</p>
-                    <div class="add_acc">
-                        <img src="./public/img/pers_acc_icon.svg" alt="">
-                        <p>Поделиться</p>
-                    </div>
-                </div>
-                <img class="share_dots" src="./public/img/right_header_dots_share.png" alt="">
-            </div>
-        </div>
-        <div class="container">
-            <div class="box">
-                <div class="item">
-                    <div class="item_top">
-                        <span>go home</span>
-                        <button><img src="./public/img/Icon.png" alt=""></button>
-                    </div>
-                    <div class="item_mid">
-                        <div class="task" >
-                            task
-                        </div>
-                        <div class="task" >
-                            task
-                        </div>
-                        <div class="task" >
-                            task
-                        </div>
-                    </div>
-                    <div class="item_bot">
-                        <button>+ Добавить карточку</button>
-                        <img src="./public/img/Frame.png" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <span>В процессе</span>
-                        <button><img src="./public/img/Icon.png" alt=""></button>
-                    </div>
-                    <div class="item_mid">
-                        <input type="text" placeholder="go home"></input>
-                    </div>
-                    <div class="item_bot">
-                        <button>+ Добавить карточку</button>
-                        <img src="./public/img/Frame.png" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <span>Готово</span>
-                        <button><img src="./public/img/Icon.png" alt=""></button>
-                    </div>
-                    <div class="item_mid"></div>
-                    <div class="item_bot">
-                        <button>+ Добавить карточку</button>
-                        <img src="./public/img/Frame.png" alt="">
-                    </div>
-                </div>
-                <div class="add_column">
-                    <button>+ Добавить ещё одну колонку</button>
-                </div>
-            </div>
-        </div>
-    </main>
+	<header>
+		<div class="left">
+			<div class="logo">
+				<img class="frame" src="./public/img/Frame.svg" alt="">
+				<img class="logo_img" src="./public/img/pseudo.png" alt="">
+			</div>
+			<div class="btns">
+				<button>Рабочие пространства <img src="./public/img/arrow_down.svg" alt=""></button>
+				<button>Недавние <img src="./public/img/arrow_down.svg" alt=""></button>
+				<button>В избранном <img src="./public/img/arrow_down.svg" alt=""></button>
+				<button>Шаблоны <img src="./public/img/arrow_down.svg" alt=""></button>
+			</div>
+			<button class="create">Создать</button>
+		</div>
+		<div class="right">
+			<div class="searcher">
+				<img width="16px" height="16px" src="./public/img/searcher_icon.svg" alt="">
+				<input class="searcher_inp" type="text" name="searcher" placeholder="Поиск">
+			</div>
+			<div class="user_info">
+				<img src="./public/img/bell.svg" alt="">
+				<img src="./public/img/q_mark.svg" alt="">
+				<p class="acc_logo">P</p>
+			</div>
+		</div>
+	</header>
+	<aside class="hide_main">
+		<div class="aside hide_aside">
+			<div class="prodigy">
+				<p>P</p>
+				<ul type="none">
+					<li>PRODIGY: рабочее пространство</li>
+					<li>Бесплатно</li>
+				</ul>
+				<img class="close_aside" src="./public/img/arrow_left.svg" alt="">
+			</div>
+			<ol type="none">
+				<li>
+					<span><img src="./public/img/desks_icon.svg" alt=""> Доски</span>
+				</li>
+				<li>
+					<span>
+						<img src="./public/img/Participants_icon.svg" alt="">
+						Участники
+					</span>
+					<img src="./public/img/plus.svg" alt="">
+				</li>
+				<li>
+					<span>
+						<img src="./public/img/settings_icon.svg" alt="">
+						Настройки рабочего пространства
+					</span>
+					<img src="./public/img/arrow_down.svg" alt="">
+				</li>
+				<li>
+					Режимы просмотра рабочего пространства
+				</li>
+				<li>
+					<span>
+						<img src="./public/img/table_icon.svg" alt="">
+						Таблица
+					</span>
+				</li>
+				<li>
+					<span>
+						<img src="./public/img/calendar_icon.svg" alt="">
+						Календарь
+					</span>
+				</li>
+				<li>
+					Мои доски
+					<img src="./public/img/plus.svg" alt="">
+				</li>
+				<li>
+					<span>
+						<div class="bg_div"> <img src="" alt=""></div>
+						desk
+					</span>
+				</li>
+			</ol>
+		</div>
+		<img class="open_aside" id="show" width="32px" height="32px" src="./public/img/arrow_right-removebg-preview.png"
+			alt="">
+	</aside>
+	<main class="content">
+		<div class="lower_header">
+			<div class="left_header">
+				<p class="left_header_p">
+					desk
+				</p>
+				<img src="./public/img/left_header_star.png" alt="">
+				<img src="./public/img/left_header_friends.png" alt="">
+				<div class="options">
+					<img src="./public/img/left_header_analystic.png" alt="">
+					<p>По доске</p>
+				</div>
+				<img class="afer_options" src="./public/img/arrow.png" alt="">
+			</div>
+			<div class="right_header">
+				<img src="./public/img/right_header_rockets.png" alt="">
+				<img src="./public/img/right_header_storm.png" alt="">
+				<div class="menu_filter">
+					<img src="./public/img/right_header_menu.png" alt="">
+					<p>
+						Фильтры
+					</p>
+				</div>
+				<span class="arrow_two">|</span>
+				<div class="acc">
+					<img src="./public/img/right_header_acc.png" alt="" width="80px">
+					<p class="add_one">+1</p>
+					<div class="add_acc">
+						<img src="./public/img/pers_acc_icon.svg" alt="">
+						<p>Поделиться</p>
+					</div>
+				</div>
+				<img class="share_dots" src="./public/img/right_header_dots_share.png" alt="">
+			</div>
+		</div>
+		<div class="container">
+			<div class="box">
+				<div class="item">
+					<div class="item_top">
+						<span>to do</span>
+						<button><img src="./public/img/Icon.png" alt=""></button>
+					</div>
+					<div class="item_mid">
+						<div draggable="true" class="task">
+							task
+						</div>
+						<div draggable="true" class="task">
+							task
+						</div>
+						<div draggable="true" class="task">
+							task
+						</div>
+					</div>
+					<div class="item_bot">
+						<button>+ Добавить карточку</button>
+						<img src="./public/img/Frame.png" alt="">
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_top">
+						<span>В процессе</span>
+						<button><img src="./public/img/Icon.png" alt=""></button>
+					</div>
+					<div class="item_mid">
+						<div draggable="true" class="task">
+							task
+						</div>
+						<div draggable="true" class="task">
+							task
+						</div>
+						<div draggable="true" class="task">
+							task
+						</div>
+					</div>
+					<div class="item_bot">
+						<button>+ Добавить карточку</button>
+						<img src="./public/img/Frame.png" alt="">
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_top">
+						<span>Готово</span>
+						<button><img src="./public/img/Icon.png" alt=""></button>
+					</div>
+					<div class="item_mid">
+						<div draggable="true" class="task">
+							task
+						</div>
+						<div draggable="true" class="task">
+							task
+						</div>
+						<div draggable="true" class="task">
+							task
+						</div>
+					</div>
+					<div class="item_bot">
+						<button>+ Добавить карточку</button>
+						<img src="./public/img/Frame.png" alt="">
+
+					</div>
+				</div>
+				<div class="add_column">
+					<button>+ Добавить ещё одну колонку</button>
+				</div>
+			</div>
+		</div>
+	</main>
 
 
-    <div class="modal_main">
-        <button class="button_x">x</button>
+	<div class="modal_main">
+		<button class="button_x">x</button>
 
-        <form name="create_new">
-            Напишите задачу
-            <input type="text" name="name">
+		<form name="create_new">
+			Напишите задачу
+			<input type="text" name="name">
 
-            Описание задачи
-            <input type="text" name="description">
+			Описание задачи
+			<input type="text" name="description">
 
-            Выберите участников команды
-            <select name="participants" id="participants"></select>
+			Выберите участников команды
+			<select name="participants" id="participants"></select>
 
-            Выберите статус
-            <select name="status" id="">
-                <option value="todo">todo</option>
-                <option value="inprogress">inprogress</option>
-                <option value="done">done</option>
-            </select>
+			Выберите статус
+			<select name="status" id="">
+				<option value="todo">todo</option>
+				<option value="inprogress">inprogress</option>
+				<option value="done">done</option>
+			</select>
 
-            Выберите Дедлайн
-            <input type="date" name="deadline" id="">
+			Выберите Дедлайн
+			<input type="date" name="deadline" id="">
 
-            <button class="create_btn">Создать задачу</button>
-        </form>
-    </div>
-
-
-    <div class="modal_add">
-        <button class="button_x">x</button>
-
-        <form name="add_new">
-            Имя Участника
-            <input type="text" name="name">
-
-            Должность участника
-            <select name="status" id="">
-                <option value="Frontend developer">Frontend developer</option>
-                <option value="Designer">Designer</option>
-                <option value="Backend developer">Backend developer</option>
-                <option value="SMM specialist">SMM specialist</option>
-            </select>
-
-            Аватарка участника
-            <div class="avatars">
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-2810697.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-4876080.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-5953620.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-805390.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-805439.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-wolverine-1674293.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-woman-3976696.png" alt="">
-                </div>
-            </div>
+			<button class="create_btn">Создать задачу</button>
+		</form>
+	</div>
 
 
-            <button class="create_btn">Добавить участника</button>
-        </form>
-    </div>
-    <script type="module" src="/main.js"></script>
+	<div class="modal_add">
+		<button class="button_x">x</button>
+
+		<form name="add_new">
+			Имя Участника
+			<input type="text" name="name">
+
+			Должность участника
+			<select name="status" id="">
+				<option value="Frontend developer">Frontend developer</option>
+				<option value="Designer">Designer</option>
+				<option value="Backend developer">Backend developer</option>
+				<option value="SMM specialist">SMM specialist</option>
+			</select>
+
+			Аватарка участника
+			<div class="avatars">
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-2810697.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-4876080.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-5953620.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-805390.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-805439.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-wolverine-1674293.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-woman-3976696.png" alt="">
+				</div>
+			</div>
+
+
+			<button class="create_btn">Добавить участника</button>
+		</form>
+	</div>
+
+	<div class="modal_task_add">
+		<button class="button_x">x</button>
+
+	</div>
+	<script type="module" src="/main.js"></script>
 </body>
 
 </html>

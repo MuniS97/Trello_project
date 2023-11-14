@@ -1,20 +1,26 @@
+//ASIDE
 let close_aside = document.querySelector(".close_aside");
 let open_aside = document.querySelector(".open_aside");
 let aside = document.querySelector("aside");
 let aside_class = document.querySelector(".aside");
 let content = document.querySelector("main");
 
-let open_modal_btn = document.querySelector('.create')
-let modal_main = document.querySelector('.modal_main')
-let close_modal_btn = document.querySelectorAll('.button_x')
-let form_create = document.forms.create_new
-let select_participants = document.querySelector('#participants')
-let form_add = document.forms.add_new
-let modal_add = document.querySelector('.modal_add')
-let add_one = document.querySelector('.add_one')
-let boxes = document.querySelectorAll('.box_avatar');
+// MODAL
+let open_modal_btn = document.querySelector(".create");
+let modal_main = document.querySelector(".modal_main");
+let close_modal_btn = document.querySelectorAll(".button_x");
+let form_create = document.forms.create_new;
+let select_participants = document.querySelector("#participants");
+let form_add = document.forms.add_new;
+let modal_add = document.querySelector(".modal_add");
+let add_one = document.querySelector(".add_one");
+let boxes = document.querySelectorAll(".box_avatar");
 
+// DRAG AND DROP
+let tasks = document.querySelectorAll(".task");
+let item_mid = document.querySelectorAll(".item_mid");
 
+//ASIDE CODE
 open_aside.onclick = () => {
   aside.classList.remove("hide_main");
   aside_class.classList.remove("hide_aside");
@@ -36,86 +42,102 @@ close_aside.onclick = () => {
   }, 1000);
 };
 
-
-
-
-
-
-
-
-
-let res = ['alex', 'adams', 'john', 'mike']
+//MODAL CODE
+let res = ["alex", "adams", "john", "mike"];
 
 for (let key in res) {
-  let option = new Option(res[key])
+  let option = new Option(res[key]);
 
-  select_participants.append(option)
+  select_participants.append(option);
 }
 
 open_modal_btn.onclick = () => {
-  modal_main.classList.add('block')
-}
-close_modal_btn.forEach( btn => {
+  modal_main.classList.add("block");
+};
+close_modal_btn.forEach((btn) => {
   btn.onclick = () => {
-    btn.parentElement.classList.remove('block')
-  }
-})
+    btn.parentElement.classList.remove("block");
+  };
+});
 
 add_one.onclick = () => {
-  modal_add.classList.add('block')
-}
+  modal_add.classList.add("block");
+};
 
 form_create.onsubmit = (e) => {
   e.preventDefault();
 
-  let arr = {}
+  let arr = {};
 
-  let fm = new FormData(form_create)
+  let fm = new FormData(form_create);
 
   fm.forEach((value, key) => {
-    arr[key] = value
-  })
+    arr[key] = value;
+  });
 
-  form_create.reset()
-  modal_main.classList.remove('block')
+  form_create.reset();
+  modal_main.classList.remove("block");
   console.log(arr);
-}
+};
 
+let choosed_avatar;
 
-
-
-
-
-let choosed_avatar
-
-boxes.forEach(box => {
+boxes.forEach((box) => {
   box.onclick = () => {
-    boxes.forEach(box=> {
-      box.classList.remove('box_selected')
-    })
-    box.classList.add('box_selected')
-    choosed_avatar = box.childNodes[1].src.split(5175).at(-1)
-    console.log(box.childNodes[1].src.split('img/').at(-1));
-  }
-} 
-)
+    boxes.forEach((box) => {
+      box.classList.remove("box_selected");
+    });
+    box.classList.add("box_selected");
+    choosed_avatar = box.childNodes[1].src.split(5175).at(-1);
+    console.log(box.childNodes[1].src.split("img/").at(-1));
+  };
+});
 
 form_add.onsubmit = (e) => {
   e.preventDefault();
 
   let arr = {
-    img: choosed_avatar
-  }
+    img: choosed_avatar,
+  };
 
-  let fm = new FormData(form_add)
+  let fm = new FormData(form_add);
 
   fm.forEach((value, key) => {
-    arr[key] = value
-  })
+    arr[key] = value;
+  });
 
   console.log(arr);
 
-  form_create.reset()
-  modal_add.classList.remove('block')
-}
+  form_create.reset();
+  modal_add.classList.remove("block");
+};
 
+// DRAG AND DROP CODE
+item_mid.forEach((box) => {
+	
+  box.ondragover = (e) => {
+    e.preventDefault();
+  };
+
+  box.ondragenter = (e) => {
+    e.preventDefault();
+  };
+
+  tasks.forEach((task) => {
+
+    task.ondragstart = (e) => {
+
+      box.ondrop = () => {
+        box.append(e.target);
+      };
+
+      setTimeout(() => {
+        task.style.display = "none";
+      }, 0);
+    };
+	
+    task.ondragend = () => {
+      task.style.display = "block";
+    };
+  });
+});
