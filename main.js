@@ -129,3 +129,52 @@ arrowIcon.addEventListener('click', () => {
 
 
 
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const tasks = document.querySelectorAll('.task');
+
+  tasks.forEach(task => {
+    task.setAttribute('draggable', true);
+    task.addEventListener('dragstart', dragStart);
+    task.addEventListener('dragover', dragOver);
+    task.addEventListener('dragenter', dragEnter);
+    task.addEventListener('dragleave', dragLeave);
+    task.addEventListener('drop', dragDrop);
+    task.addEventListener('dragend', dragEnd);
+  });
+
+  let draggedTask = null;
+  
+  function dragStart() {
+    draggedTask = this;
+    setTimeout(() => {
+      this.style.display = 'none';
+    }, 0);
+  }
+
+  function dragOver(e) {
+    e.preventDefault();
+  }
+
+  function dragEnter(e) {
+    e.preventDefault();
+    this.classList.add('over');
+  }
+
+  function dragLeave() {
+    this.classList.remove('over');
+  }
+
+  function dragDrop() {
+    this.classList.remove('over');
+    this.parentNode.insertBefore(draggedTask, this);
+  }
+
+  function dragEnd() {
+    this.style.display = 'block';
+    draggedTask = null;
+  }
+});
