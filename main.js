@@ -126,3 +126,6 @@ const arrowIcon = document.querySelector('.after_options');
 arrowIcon.addEventListener('click', () => {
   dropdown.classList.toggle('active');
 });
+
+
+
