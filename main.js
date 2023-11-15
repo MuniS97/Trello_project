@@ -15,6 +15,7 @@ let add_one = document.querySelector('.add_one')
 let boxes = document.querySelectorAll('.box_avatar');
 
 let bg = document.querySelector('.black_bg')
+let add_card = document.querySelectorAll('.add_card')
 
 open_aside.onclick = () => {
   aside.classList.remove("hide_main");
@@ -72,6 +73,13 @@ for (let key in res) {
 
   select_participants.append(option)
 }
+
+add_card.forEach(btn => {
+  btn.onclick = () => {
+    bg.classList.add('bg_open')
+    modal_main.classList.add('block')
+  }
+})
 
 open_modal_btn.onclick = () => {
   modal_main.classList.add('block')

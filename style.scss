@@ -394,12 +394,26 @@ aside {
   background-color: #22272b;
   border: none;
   border-radius: 5px;
-  padding: 8px 12px;
+  padding: 8px 12px 40px 12px;
   width: 100%;
   color: #b6c2cf;
-  outline: none;
   min-height: 100px;
   cursor: grab;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .title{
+    font-weight: bold;
+  }
+  .deadline_box{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    .deadline{
+      
+    }
+  }
 }
 .item_mid .task:active {
   cursor: grabbing;
@@ -510,7 +524,7 @@ aside {
 }
 .bg_open{
   display: block;
-  z-index: 0;
+  z-index: 12;
   animation: vis_bg .5s forwards;
 }
 
@@ -594,10 +608,12 @@ input, select{
 
 @keyframes modal {
   from{
+    z-index: 13;
       visibility: visible;
       opacity: 1%;
   }
   to{
+      z-index: 13;
       visibility: visible;
       opacity: 100%;
   }
