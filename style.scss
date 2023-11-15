@@ -189,163 +189,103 @@ aside {
   background: rgba(0, 0, 0, 0.24);
   display: flex;
   justify-content: space-between;
-  padding: 10px 0 12px;
   align-items: center;
-}
+  padding: 12px 10px;
+  .left_header{
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    .left_header_p{
+      padding: 0 10px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    img{
+      width: 34px;
+      height: 34px;
+      padding: 8px;
+      cursor: pointer;
+    }
+    .options {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 32px;
+      height: 32px;
+      max-width: 400px;
+      padding: 0px 12px;
+      gap: 8px;
+      align-self: stretch;
+      border-radius: 3px;
+      background-color: white;
+      margin-left: 5px;
+      img{
+        width: 16px;
+        height: 16px;
+        padding: 0;
+      }
+    }
+  }
+  .right_header, .menu_filter, .acc, .add_acc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  .right_header{
+    img{
+      width: 34px;
+      height: 34px;
+      padding: 8px;
+    }
+    .menu_filter{
+      margin: 0 8px;
+    }
+    .arrow_two{
+      width: 1px;
+      height: 30px;
+      border-left: 0.8px solid rgba(255, 255, 255, 0.16);
+      margin: 0 4px;
+    }
+    .acc{
+      gap: 8px;
+      .add_one{
+        cursor: pointer;
+      }
+      img{
+        width: 30px;
+        height: 30px;
+        padding: 0;
+      }
+      .add_acc{
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        max-width: 400px;
+        height: 32px;
+        padding: 6px 12px;
+        display: flex;
+        gap: 4px;
+        border-radius: 3px;
+        margin: 0 5px;
+        img{
+          width: 20px;
+          height: 20px;
+          padding: 0;
+        }
+      }
+    }
 
-.lower_header .left_header {
-  padding: 18px 10px 12px;
-  display: flex;
-  align-items: center;
-}
-
-.left_header_p {
-  margin-right: 22px;
-  color: #fff;
-  font-family: Roboto;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 32px;
-}
-
-.left_header img {
-  margin-top: 3px;
-  margin-left: 20px;
-  width: 26px;
-  height: 26px;
-}
-
-.options {
-  margin-left: 13px;
-  display: flex;
-  min-width: 32px;
-  height: 42px;
-  max-width: 400px;
-  padding: 0px 12.11px 0px 12px;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  align-self: stretch;
-  border-radius: 8px;
-  background-color: white;
-}
-
-.acc{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.add_one{
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.options img {
-  width: 26px;
-  height: 26px;
-}
-
-.options p {
-  color: #172b4d;
-  font-family: Roboto;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 32px;
-  /* 230.371% */
-}
-
-.right_header {
-  display: flex;
-  align-items: center;
-  text-align: right;
-  justify-content: right;
-  position: absolute;
-  right: 0;
-}
-
-.right_header img {
-  width: 26px;
-  height: 26px;
-  margin-left: 20px;
-}
-
-.right_header .menu_filter {
-  display: flex;
-}
-
-.right_header .menu_filter p {
-  color: #fff;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  /* 146.286% */
-  margin-left: 8px;
-}
-
-.arrow_two {
-  font-size: 16px;
-  font-weight: 800;
-  margin-left: 15px;
-  color: rgba(255, 255, 255, 0.16);
-}
-
-.acc {
-  display: flex;
-  .acc_logo{
-    width: 48px;
-    height: 48px;
-    font-size: 26px;
-    color: #fff;
-    padding-left: 16px;
-    margin-inline: 12px;
   }
 }
-.afer_options{
-  width: 33px !important;
-  height: 33px !important;
-}
-.add_acc {
-  display: flex;
-  height: 32px;
-  max-width: 400px;
-  padding: 5.8px 12px 6.2px 8px;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-  background-color: white;
-  margin-top: 8px;
-  margin-left: 7px;
-  border-radius: 8px;
-}
 
-.add_acc img {
-  width: 26px;
-  height: 26px;
-}
 
-.add_acc p {
-  color: #172b4d;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  /* 146.286% */
-}
 
-.right_header .share_dots {
-  width: 30px;
-  height: 30px;
-  margin-right: 22px;
-}
+
+
 .content {
   width: 100%;
   position: absolute;

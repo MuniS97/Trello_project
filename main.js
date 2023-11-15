@@ -52,7 +52,7 @@ function allowDrop(e) {
 task.ondragstart = drag;
 
 function drag(e) {
-  e.dataTransfer.setData('id', e.target.id)
+  e.dataTransfer.setData('id', e.target.id);
 }
 
 new_task.ondrop = drop;
