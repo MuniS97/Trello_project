@@ -250,6 +250,43 @@ aside {
   height: 26px;
 }
 
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.arrow-options {
+  cursor: pointer;
+}
+
+.under-arrow {
+  padding-top: 10px;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.under-arrow a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 10px;
+  margin: 0px;
+}
+
+.under-arrow hr {
+  margin: 5px 0;
+  border: 0.5px solid #ddd;
+}
+
 .options {
   margin-left: 13px;
   display: flex;

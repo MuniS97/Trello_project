@@ -81,9 +81,9 @@ form_create.onsubmit = (e) => {
     form_create.reset();
     modal_main.classList.remove("block");
     getData("/users")
-    .then((res) => {
-      reload_task(res.data, items);
-    });
+      .then((res) => {
+        reload_task(res.data, items);
+      });
   });
 };
 
@@ -119,131 +119,99 @@ form_add.onsubmit = (e) => {
   modal_add.classList.remove("block");
 };
 
+//under arrow 
+document.addEventListener("DOMContentLoaded", function () {
+  const arrowOptions = document.querySelector(".arrow-options");
+  const underArrow = document.querySelector(".under-arrow");
 
+  arrowOptions.addEventListener("click", function () {
+      underArrow.style.display = (underArrow.style.display === "block") ? "none" : "block";
+  });
 
-
-
-
-
-
-
-// let all_task = document.querySelectorAll(".item_mid");
-// let task = document.querySelectorAll(".task");
-// let items = all_task[0];
-
-// all_task.forEach((items) => {
-//   items.ondragenter = (e) => {
-//     e.preventDefault();
-//   };
-//   items.ondragover = (e) => {
-//     e.preventDefault();
-//   };
-// });
-
-// task.forEach((task, idx) => {
-//   task.ondragstart = () => {
-//     setTimeout(() => {
-//       task[idx].style.display = "none";
-//     }, 0);
-//   };
-
-  
-//   task.ondragend = (event) => {
-//     task[idx].style.display = "block";
-//     task[idx].style.border = "none";
-//   };
-// });
-
-// function reload_task(arr, items) {
-//   items.innerHTML = "";
-//   for (let item of arr) {
-//     let task = document.createElement("div");
-//     let taskName = document.createElement("h4");
-//     let taskDescription = document.createElement("p");
-//     let taskParticipant = document.createElement("h5");
-//     let taskDeadline = document.createElement("p");
-
-//     task.classList.add("task");
-//     taskName.classList.add("h4");
-//     taskDescription.classList.add("p");
-//     taskParticipant.classList.add("h5");
-//     taskDeadline.classList.add("p2");
-
-//     task.setAttribute("draggable", "true");
-//     taskName.innerHTML = `<span>Task:</span> ${item.name}`;
-//     taskDescription.innerHTML = `<span>Description:</span> ${item.description}`;
-//     taskParticipant.innerHTML = `<span>Participant:</span> ${item.participants}`;
-//     taskDeadline.innerHTML = `<span>Deadline:</span> ${item.deadline}`;
-
-//     items.append(task);
-//     task.append(taskName, taskDescription, taskParticipant, taskDeadline);
-//   }
-// }
+  document.addEventListener("click", function (event) {
+      if (!event.target.matches('.arrow-options')) {
+          underArrow.style.display = 'none';
+      }
+  });
+});
 
 
 
 let all_task = document.querySelectorAll(".item_mid");
-let task = document.querySelectorAll(".task");
 let items = all_task[0];
-let currentDraggedTask = null;
 
-all_task.forEach((items) => {
-  items.ondragenter = (e) => {
-    e.preventDefault();
-  };
-
-  items.ondragover = (e) => {
-    e.preventDefault();
-  };
-
-  items.ondrop = (e) => {
-    e.preventDefault();
-    if (currentDraggedTask) {
-      items.appendChild(currentDraggedTask);
-      currentDraggedTask = null;
-    }
-  };
-});
-
-task.forEach((task, idx) => {
-  task.ondragstart = () => {
-    currentDraggedTask = task;
-    setTimeout(() => {
-      task.style.display = "none";
-    }, 0);
-  };
-
-  task.ondragend = () => {
-    if (currentDraggedTask) {
-      currentDraggedTask.style.display = "block";
-      currentDraggedTask = null;
-    }
-  };
-});
 
 function reload_task(arr, items) {
   items.innerHTML = "";
   for (let item of arr) {
     let task = document.createElement("div");
     let taskName = document.createElement("h4");
-    let taskDescription = document.createElement("p");
-    let taskParticipant = document.createElement("h5");
-    let taskDeadline = document.createElement("p");
+    let description_task = document.createElement("p");
+    let task_name = document.createElement("h5");
+    let deadline_task = document.createElement("p");
 
     task.classList.add("task");
     taskName.classList.add("h4");
-    taskDescription.classList.add("p");
-    taskParticipant.classList.add("h5");
-    taskDeadline.classList.add("p2");
+    description_task.classList.add("p");
+    task_name.classList.add("h5");
+    deadline_task.classList.add("p2");
 
     task.setAttribute("draggable", "true");
     taskName.innerHTML = `<span>Task:</span> ${item.name}`;
-    taskDescription.innerHTML = `<span>Description:</span> ${item.description}`;
-    taskParticipant.innerHTML = `<span>Participant:</span> ${item.participants}`;
-    taskDeadline.innerHTML = `<span>Deadline:</span> ${item.deadline}`;
+    description_task.innerHTML = `<span>Description:</span> ${item.description}`;
+    task_name.innerHTML = `<span>Participant:</span> ${item.participants}`;
+    deadline_task.innerHTML = `<span>Deadline:</span> ${item.deadline}`;
 
     items.append(task);
-    task.append(taskName, taskDescription, taskParticipant, taskDeadline);
+    task.append(taskName, description_task, task_name, deadline_task);
   }
 }
 
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const tasks = document.querySelectorAll('.task');
+
+  tasks.forEach(task => {
+    task.setAttribute('draggable', true);
+    task.addEventListener('dragstart', dragStart);
+    task.addEventListener('dragover', dragOver);
+    task.addEventListener('dragenter', dragEnter);
+    task.addEventListener('dragleave', dragLeave);
+    task.addEventListener('drop', dragDrop);
+    task.addEventListener('dragend', dragEnd);
+  });
+
+  let draggedTask = null;
+
+  function dragStart() {
+    draggedTask = this;
+    setTimeout(() => {
+      this.style.display = 'none';
+    }, 0);
+  }
+
+  function dragOver(e) {
+    e.preventDefault();
+  }
+
+  function dragEnter(e) {
+    e.preventDefault();
+    this.classList.add('over');
+  }
+
+  function dragLeave() {
+    this.classList.remove('over');
+  }
+
+  function dragDrop() {
+    this.classList.remove('over');
+    this.parentNode.insertBefore(draggedTask, this);
+  }
+
+  function dragEnd() {
+    this.style.display = 'block';
+    draggedTask = null;
+  }
+});

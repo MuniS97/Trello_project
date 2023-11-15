@@ -108,8 +108,21 @@
                     <img src="./public/img/lw_header_analystic.svg" alt="">
                     <p>По доске</p>
                 </div>
-                <img class="afer_options" src="./public/img/lw_header_arrow_down.svg" alt="">
+
+                <div class="dropdown-container">
+                    <img class="arrow-options" src="./public/img/lw_header_arrow_down.svg" alt="Dropdown Arrow">
+                    <div class="under-arrow">
+                      <a href="">todo</a>
+                      <hr>
+                      <a href="">inprogress</a>
+                      <hr>
+                      <a href="">done</a>
+                    </div>
+                  </div>
+                
             </div>
+
+
             <div class="right_header">
                 <img src="./public/img/lw_header_rocket.svg" alt="">
                 <img src="./public/img/lw_header_storm.svg" alt="">
@@ -219,82 +232,82 @@
         }
     </script>
 
-<div class="modal_main">
-    <button class="button_x">x</button>
+    <div class="modal_main">
+        <button class="button_x">x</button>
 
-    <form name="create_new">
-        Напишите задачу
-        <input type="text" name="name">
+        <form name="create_new">
+            Напишите задачу
+            <input type="text" name="name">
 
-        Описание задачи
-        <input type="text" name="description">
+            Описание задачи
+            <input type="text" name="description">
 
-        Выберите участников команды
-        <select name="participants" id="participants"></select>
+            Выберите участников команды
+            <select name="participants" id="participants"></select>
 
-        Выберите статус
-        <select name="status" id="">
-            <option value="todo">todo</option>
-            <option value="inprogress">inprogress</option>
-            <option value="done">done</option>
-        </select>
+            Выберите статус
+            <select name="status" id="">
+                <option value="todo">todo</option>
+                <option value="inprogress">inprogress</option>
+                <option value="done">done</option>
+            </select>
 
-        Выберите Дедлайн
-        <input type="date" name="deadline" id="">
+            Выберите Дедлайн
+            <input type="date" name="deadline" id="">
 
-        <button class="create_btn">Создать задачу</button>
-    </form>
-</div>
+            <button class="create_btn">Создать задачу</button>
+        </form>
+    </div>
 
 
-<div class="modal_add">
-    <button class="button_x">x</button>
+    <div class="modal_add">
+        <button class="button_x">x</button>
 
-    <form name="add_new">
-        Имя Участника
-        <input type="text" name="name">
+        <form name="add_new">
+            Имя Участника
+            <input type="text" name="name">
 
-        Должность участника
-        <select name="status" id="">
-            <option value="Frontend developer">Frontend developer</option>
-            <option value="Designer">Designer</option>
-            <option value="Backend developer">Backend developer</option>
-            <option value="SMM specialist">SMM specialist</option>
-        </select>
+            Должность участника
+            <select name="status" id="">
+                <option value="Frontend developer">Frontend developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Backend developer">Backend developer</option>
+                <option value="SMM specialist">SMM specialist</option>
+            </select>
 
-        Аватарка участника
-        <div class="avatars">
-            <div class="box_avatar">
-                <img src="./public/img/free-icon-avatar-2810697.png" alt="">
+            Аватарка участника
+            <div class="avatars">
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-2810697.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-4876080.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-5953620.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-805390.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-805439.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-wolverine-1674293.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-woman-3976696.png" alt="">
+                </div>
             </div>
-            <div class="box_avatar">
-                <img src="./public/img/free-icon-avatar-4876080.png" alt="">
-            </div>
-            <div class="box_avatar">
-                <img src="./public/img/free-icon-avatar-5953620.png" alt="">
-            </div>
-            <div class="box_avatar">
-                <img src="./public/img/free-icon-avatar-805390.png" alt="">
-            </div>
-            <div class="box_avatar">
-                <img src="./public/img/free-icon-avatar-805439.png" alt="">
-            </div>
-            <div class="box_avatar">
-                <img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
-            </div>
-            <div class="box_avatar">
-                <img src="./public/img/free-icon-wolverine-1674293.png" alt="">
-            </div>
-            <div class="box_avatar">
-                <img src="./public/img/free-icon-woman-3976696.png" alt="">
-            </div>
-        </div>
 
 
-        <button class="create_btn">Добавить участника</button>
-    </form>
-</div>
-<script type="module" src="/main.js"></script>
+            <button class="create_btn">Добавить участника</button>
+        </form>
+    </div>
+    <script type="module" src="/main.js"></script>
 </body>
 
 </html>
