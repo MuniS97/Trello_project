@@ -1,44 +1,5 @@
 {
   "users": [
-    {
-      "name": "dasdsadad",
-      "description": "dasd",
-      "participants": "alex",
-      "status": "todo",
-      "deadline": "2102-02-23",
-      "id": 1
-    },
-    {
-      "name": "dsads",
-      "description": "dsads",
-      "participants": "alex",
-      "status": "todo",
-      "deadline": "2021-02-23",
-      "id": 2
-    },
-    {
-      "name": "dasds",
-      "description": "dsads",
-      "participants": "alex",
-      "status": "todo",
-      "deadline": "2023-02-12",
-      "id": 3
-    },
-    {
-      "name": "sdadsad",
-      "description": "asdsad",
-      "participants": "alex",
-      "status": "todo",
-      "deadline": "2021-03-23",
-      "id": 4
-    },
-    {
-      "name": "dasdsadad",
-      "description": "asdsadd",
-      "participants": "alex",
-      "status": "todo",
-      "deadline": "2021-12-23",
-      "id": 5
-    }
+   
   ]
 }
