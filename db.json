@@ -1,5 +1,20 @@
 {
   "users": [
- 
+    {
+      "name": "samir",
+      "description": "sdfdsf",
+      "participants": "Ulmas",
+      "status": "todo",
+      "deadline": "2012-11-23",
+      "id": 1
+    },
+    {
+      "name": "sadsd",
+      "description": "dasd",
+      "participants": "Ulmas",
+      "status": "todo",
+      "deadline": "2012-03-23",
+      "id": 2
+    }
   ]
 }
