@@ -110,6 +110,7 @@ form_create.onsubmit = (e) => {
 
   form_create.reset()
   modal_main.classList.remove('block')
+  bg.classList.remove('bg_open')
   console.log(arr);
 }
 
