@@ -439,16 +439,15 @@ aside {
 
 
 .modal_main{
-  width: 400px;
-  background-color: rgb(46, 44, 44);
+  width: 600px;
+  background: #1d2125;
   border-radius: 8px;
   position: fixed !important;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
   padding: 50px;
-  position: relative;
-  height: 450px;
+  height: fit-content;
   overflow-y: scroll;
   scroll-padding: 50px;
   visibility: hidden;
@@ -465,7 +464,7 @@ aside {
 
 .modal_add{
   width: 700px;
-  background-color: rgb(46, 44, 44);
+  background: #1d2125;
   border-radius: 8px;
   position: fixed !important;
   left: 50%;
@@ -473,12 +472,46 @@ aside {
   top: 180px;
   padding: 50px;
   position: relative;
-  height: 700px;
+  height: fit-content;
   overflow-y: scroll;
   scroll-padding: 50px;
   visibility: hidden;
+  .button_x{
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    cursor: pointer;
+    img{
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
 
+.black_bg{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  display: none;
+
+}
+.bg_open{
+  display: block;
+  z-index: 0;
+  animation: vis_bg .5s forwards;
+}
+
+@keyframes vis_bg {
+  from{
+    display: block;
+    opacity: 1%;
+  } to{
+    display: block;
+    opacity: 90%;
+  }
+}
 
 /* полоса прокрутки (скроллбар) */
 ::-webkit-scrollbar {
@@ -544,13 +577,18 @@ input, select{
 }
 
 .block{
-  animation: lll .5s linear forwards;
+  z-index: 1;
+  animation: modal .5s linear forwards;
 }
 
-@keyframes lll {
+@keyframes modal {
+  from{
+      visibility: visible;
+      opacity: 1%;
+  }
   to{
       visibility: visible;
-      width: 700px;
+      opacity: 100%;
   }
 }
 

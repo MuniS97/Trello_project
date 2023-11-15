@@ -14,6 +14,7 @@ let modal_add = document.querySelector('.modal_add')
 let add_one = document.querySelector('.add_one')
 let boxes = document.querySelectorAll('.box_avatar');
 
+let bg = document.querySelector('.black_bg')
 
 open_aside.onclick = () => {
   aside.classList.remove("hide_main");
@@ -74,15 +75,18 @@ for (let key in res) {
 
 open_modal_btn.onclick = () => {
   modal_main.classList.add('block')
+  bg.classList.add('bg_open')
 }
 close_modal_btn.forEach( btn => {
   btn.onclick = () => {
     btn.parentElement.classList.remove('block')
+    bg.classList.remove('bg_open')
   }
 })
 
 add_one.onclick = () => {
   modal_add.classList.add('block')
+  bg.classList.add('bg_open')
 }
 
 form_create.onsubmit = (e) => {
