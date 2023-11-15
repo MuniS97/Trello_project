@@ -43,7 +43,7 @@ close_aside.onclick = () => {
   }, 1000);
 };
 
-let res = ["alex", "adams", "john", "mike"];
+let res = ["Ulmas", "Munis", "Shoxrux", "Ruxshona", "Samir"];
 
 for (let key in res) {
   let option = new Option(res[key]);

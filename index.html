@@ -195,43 +195,7 @@
     </main>
 
 
-    <script>
-        function createTask() {
-            // Get form values
-            const name = document.forms["create_new"]["name"].value;
-            const description = document.forms["create_new"]["description"].value;
-            const participants = document.forms["create_new"]["participants"].value;
-            const status = document.forms["create_new"]["status"].value;
-            const deadline = document.forms["create_new"]["deadline"].value;
-
-            // Create a new task item
-            const newItem = document.createElement("div");
-            newItem.classList.add("item");
-
-            newItem.innerHTML = `
-            <div class="item_top">
-                <span>${status}</span>
-                <button><img src="./public/img/Icon.png" alt=""></button>
-            </div>
-            <div class="item_mid">
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Description:</strong> ${description}</p>
-                <p><strong>Participants:</strong> ${participants}</p>
-                <p><strong>Deadline:</strong> ${deadline}</p>
-            </div>
-            <div class="item_bot">
-                <button>+ Добавить карточку</button>
-                <img src="./public/img/Frame.png" alt="">
-            </div>
-        `;
-
-            // Append the new item to the corresponding box
-            const boxId = status + "Box";
-            const box = document.getElementById(boxId);
-            box.appendChild(newItem);
-        }
-    </script>
-
+   
     <div class="modal_main">
         <button class="button_x">x</button>
 
