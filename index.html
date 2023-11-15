@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Vite Samir</title>
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./style.scss">
 </head>
@@ -108,19 +108,8 @@
                     <img src="./public/img/lw_header_analystic.svg" alt="">
                     <p>По доске</p>
                 </div>
-                <div class="dropdown">
-                    <img class="after_options" src="./public/img/lw_header_arrow_down.svg" alt="">
-                    <div class="under_arrow">
-                        <p>To do</p>
-                        <hr>
-                        <p>In progress</p>
-                        <hr>
-                        <p>Ready</p>
-                    </div>
-                </div>
+                <img class="afer_options" src="./public/img/lw_header_arrow_down.svg" alt="">
             </div>
-
-
             <div class="right_header">
                 <img src="./public/img/lw_header_rocket.svg" alt="">
                 <img src="./public/img/lw_header_storm.svg" alt="">
@@ -146,21 +135,12 @@
             <div class="box">
                 <div class="item">
                     <div class="item_top">
-                        <span>go home</span>
+                        <span>todo</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid">
-                        <div class="task" data-draggable="true">
-                            task 1
-                        </div>
-                        <div class="task" data-draggable="true">
-                            task 2
-                        </div>
-                        <div class="task" data-draggable="true">
-                            task 3
-                        </div>
-                    </div>
+                    <div class="item_mid" id="task_mid">
 
+                    </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
                         <img src="./public/img/Frame.png" alt="">
@@ -168,11 +148,12 @@
                 </div>
                 <div class="item">
                     <div class="item_top">
-                        <span>В процессе</span>
+                        <span>inprogress</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
                     <div class="item_mid">
-                        <input type="text" placeholder="go home"></input>
+
+
                     </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
@@ -181,10 +162,13 @@
                 </div>
                 <div class="item">
                     <div class="item_top">
-                        <span>Готово</span>
+                        <span>done</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid"></div>
+                    <div class="item_mid">
+
+
+                    </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
                         <img src="./public/img/Frame.png" alt="">
@@ -199,87 +183,118 @@
 
 
     <script>
-       
+        function createTask() {
+            // Get form values
+            const name = document.forms["create_new"]["name"].value;
+            const description = document.forms["create_new"]["description"].value;
+            const participants = document.forms["create_new"]["participants"].value;
+            const status = document.forms["create_new"]["status"].value;
+            const deadline = document.forms["create_new"]["deadline"].value;
+
+            // Create a new task item
+            const newItem = document.createElement("div");
+            newItem.classList.add("item");
+
+            newItem.innerHTML = `
+            <div class="item_top">
+                <span>${status}</span>
+                <button><img src="./public/img/Icon.png" alt=""></button>
+            </div>
+            <div class="item_mid">
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Description:</strong> ${description}</p>
+                <p><strong>Participants:</strong> ${participants}</p>
+                <p><strong>Deadline:</strong> ${deadline}</p>
+            </div>
+            <div class="item_bot">
+                <button>+ Добавить карточку</button>
+                <img src="./public/img/Frame.png" alt="">
+            </div>
+        `;
+
+            // Append the new item to the corresponding box
+            const boxId = status + "Box";
+            const box = document.getElementById(boxId);
+            box.appendChild(newItem);
+        }
     </script>
 
-    <div class="modal_main">
-        <button class="button_x">x</button>
+<div class="modal_main">
+    <button class="button_x">x</button>
 
-        <form name="create_new">
-            Напишите задачу
-            <input type="text" name="name">
+    <form name="create_new">
+        Напишите задачу
+        <input type="text" name="name">
 
-            Описание задачи
-            <input type="text" name="description">
+        Описание задачи
+        <input type="text" name="description">
 
-            Выберите участников команды
-            <select name="participants" id="participants"></select>
+        Выберите участников команды
+        <select name="participants" id="participants"></select>
 
-            Выберите статус
-            <select name="status" id="">
-                <option value="todo">todo</option>
-                <option value="inprogress">inprogress</option>
-                <option value="done">done</option>
-            </select>
+        Выберите статус
+        <select name="status" id="">
+            <option value="todo">todo</option>
+            <option value="inprogress">inprogress</option>
+            <option value="done">done</option>
+        </select>
 
-            Выберите Дедлайн
-            <input type="date" name="deadline" id="">
+        Выберите Дедлайн
+        <input type="date" name="deadline" id="">
 
-            <button class="create_btn">Создать задачу</button>
-        </form>
-    </div>
+        <button class="create_btn">Создать задачу</button>
+    </form>
+</div>
 
 
-    <div class="modal_add">
-        <button class="button_x">x</button>
+<div class="modal_add">
+    <button class="button_x">x</button>
 
-        <form name="add_new">
-            Имя Участника
-            <input type="text" name="name">
+    <form name="add_new">
+        Имя Участника
+        <input type="text" name="name">
 
-            Должность участника
-            <select name="status" id="">
-                <option value="Frontend developer">Frontend developer</option>
-                <option value="Designer">Designer</option>
-                <option value="Backend developer">Backend developer</option>
-                <option value="SMM specialist">SMM specialist</option>
-            </select>
+        Должность участника
+        <select name="status" id="">
+            <option value="Frontend developer">Frontend developer</option>
+            <option value="Designer">Designer</option>
+            <option value="Backend developer">Backend developer</option>
+            <option value="SMM specialist">SMM specialist</option>
+        </select>
 
-            Аватарка участника
-            <div class="avatars">
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-2810697.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-4876080.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-5953620.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-805390.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-805439.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-wolverine-1674293.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-woman-3976696.png" alt="">
-                </div>
+        Аватарка участника
+        <div class="avatars">
+            <div class="box_avatar">
+                <img src="./public/img/free-icon-avatar-2810697.png" alt="">
             </div>
+            <div class="box_avatar">
+                <img src="./public/img/free-icon-avatar-4876080.png" alt="">
+            </div>
+            <div class="box_avatar">
+                <img src="./public/img/free-icon-avatar-5953620.png" alt="">
+            </div>
+            <div class="box_avatar">
+                <img src="./public/img/free-icon-avatar-805390.png" alt="">
+            </div>
+            <div class="box_avatar">
+                <img src="./public/img/free-icon-avatar-805439.png" alt="">
+            </div>
+            <div class="box_avatar">
+                <img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
+            </div>
+            <div class="box_avatar">
+                <img src="./public/img/free-icon-wolverine-1674293.png" alt="">
+            </div>
+            <div class="box_avatar">
+                <img src="./public/img/free-icon-woman-3976696.png" alt="">
+            </div>
+        </div>
 
 
-            <button class="create_btn">Добавить участника</button>
-        </form>
-    </div>
-
-
-    <script type="module" src="/main.js"></script>
+        <button class="create_btn">Добавить участника</button>
+    </form>
+</div>
+<script type="module" src="/main.js"></script>
 </body>
 
 </html>
