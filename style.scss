@@ -240,6 +240,7 @@ aside {
       width: 34px;
       height: 34px;
       padding: 8px;
+      cursor: pointer;
     }
     .menu_filter{
       margin: 0 8px;
@@ -271,6 +272,7 @@ aside {
         gap: 4px;
         border-radius: 3px;
         margin: 0 5px;
+        cursor: pointer;
         img{
           width: 20px;
           height: 20px;
@@ -450,6 +452,15 @@ aside {
   overflow-y: scroll;
   scroll-padding: 50px;
   visibility: hidden;
+  .button_x{
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    cursor: pointer;
+    img{
+      width: 20px;
+    }
+  }
 }
 
 .modal_add{
@@ -462,7 +473,7 @@ aside {
   top: 180px;
   padding: 50px;
   position: relative;
-  height: 450px;
+  height: 700px;
   overflow-y: scroll;
   scroll-padding: 50px;
   visibility: hidden;
@@ -499,7 +510,6 @@ form {
   flex-direction: column;
   gap: 15px;
   font-size: 20px;
-  
 }
 
 input, select{
@@ -511,7 +521,6 @@ input, select{
   height: 40px;
   text-align: center;
   color: white;
-
 }
 
 .button_x{
