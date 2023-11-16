@@ -1,3 +1,7 @@
+let base_url = 'http://localhost:8080'
+import {getData} from './modules/helpers'
+import {postData} from './modules/helpers'
+
 let close_aside = document.querySelector(".close_aside");
 let open_aside = document.querySelector(".open_aside");
 let aside = document.querySelector("aside");
@@ -16,6 +20,56 @@ let boxes = document.querySelectorAll('.box_avatar');
 
 let bg = document.querySelector('.black_bg')
 let add_card = document.querySelectorAll('.add_card')
+let item_mid = document.querySelectorAll('.item .item_mid')
+
+function reload(arr) {
+  item_mid.forEach(el => { el.innerHTML = '' })
+  for (let user of arr) {
+    let item_mid = document.querySelector('.item_mid')
+    let task = document.createElement('div')
+    let title = document.createElement('span')
+    let desc = document.createElement('p')
+    let deadline = document.createElement('div')
+  
+    task.setAttribute('id', user.id)
+    task.setAttribute('class', 'task')
+    task.setAttribute('draggable', true)
+  
+    title.innerHTML = user.title
+    desc.innerHTML = user.description
+    deadline.innerHTML = user.deadline
+  
+    item_mid.append(task)
+    task.append(title, desc, deadline)
+  
+    task.classList.add('task')
+    title.classList.add('title')
+    desc.classList.add('decsription')
+    deadline.classList.add('deadline')
+
+    item_mid = allowDrop
+    
+    function allowDrop(e) {
+      e.preventDefault();
+    }
+
+    task.ondragstart = drag;
+
+    function drag(e) {
+      e.dataTransfer.setData('id', e.target.id);
+    }
+
+    new_task.ondrop = drop;
+    in_progress.ondrop = drop;
+    done.ondrop = drop;
+
+    function drop(e) {
+      let itemId = e.dataTransfer.getData('id')
+      e.target.append(document.getElementById(itemId))
+    }
+  }
+}
+
 
 open_aside.onclick = () => {
   aside.classList.remove("hide_main");
@@ -38,38 +92,12 @@ close_aside.onclick = () => {
   }, 1000);
 };
 
-let new_task = document.querySelector('#new_task')
-let in_progress = document.querySelector('#in_progress')
-let done = document.querySelector('#done')
-let task = document.querySelector('.task');
 
-new_task.ondragover = allowDrop;
-in_progress.ondragover = allowDrop;
-done.ondragover = allowDrop;
 
-function allowDrop(e) {
-  e.preventDefault();
-}
+let res_option = ['alex', 'adams', 'john', 'mike']
 
-task.ondragstart = drag;
-
-function drag(e) {
-  e.dataTransfer.setData('id', e.target.id);
-}
-
-new_task.ondrop = drop;
-in_progress.ondrop = drop;
-done.ondrop = drop;
-
-function drop(e) {
-  let itemId = e.dataTransfer.getData('id')
-  e.target.append(document.getElementById(itemId))
-}
-
-let res = ['alex', 'adams', 'john', 'mike']
-
-for (let key in res) {
-  let option = new Option(res[key])
+for (let key in res_option) {
+  let option = new Option(res_option[key])
 
   select_participants.append(option)
 }
@@ -96,25 +124,6 @@ add_one.onclick = () => {
   modal_add.classList.add('block')
   bg.classList.add('bg_open')
 }
-
-form_create.onsubmit = (e) => {
-  e.preventDefault();
-
-  let arr = {}
-
-  let fm = new FormData(form_create)
-
-  fm.forEach((value, key) => {
-    arr[key] = value
-  })
-
-  form_create.reset()
-  modal_main.classList.remove('block')
-  bg.classList.remove('bg_open')
-  console.log(arr);
-}
-
-
 
 
 
@@ -152,3 +161,37 @@ form_add.onsubmit = (e) => {
   modal_add.classList.remove('block')
 }
 
+
+getData('/users')
+  .then((res) => {
+    if(res.status !== 200 && res.status !== 201) 
+      return
+      reload(res.data);
+  })
+
+form_create.onsubmit = (e) => {
+  e.preventDefault();
+
+  let user = {}
+  let fm = new FormData(form_create)
+  fm.forEach((value, key) => {
+    user[key] = value
+  })
+
+  form_create.reset()
+  modal_main.classList.remove('block')
+  bg.classList.remove('bg_open')
+
+  postData('/users', user)
+    .then((res) => {
+      if (res.status !== 200 && res.status !== 201) 
+      console.log(user);
+
+      form_create.reset()
+      getData('/users', user)
+      .then((res) => {
+        if(res.status === 200 || res.status === 201)
+        reload(res.data)
+    }) 
+  })
+}

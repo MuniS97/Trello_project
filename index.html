@@ -15,7 +15,7 @@
     <header>
         <div class="left">
             <div class="logo">
-                <img class="frame" src="./public/img/Frame.svg" alt="">
+                <img class="frame" src="./public/img/Frame.png" alt="">
                 <img class="logo_img" src="./public/img/pseudo.png" alt="">
             </div>
             <div class="btns">
@@ -142,19 +142,15 @@
             <div class="box">
                 <div class="item">
                     <div class="item_top">
-                        <span>To do</span>
+                        <span class="status">to do</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
                     <div class="item_mid" id="new_task">
                         <div class="task" id="task" draggable="true">
                             <span class="title">Title</span>
                             <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae minus ad quas culpa error ipsum nemo id cupiditate nesciunt</p>
-                            <div style="color: #555" class="deadline_box">
-                                Deadline:
-                                <span class="days">1 день</span>
-                                <span class="hours">23 :</span>
-                                <span class="minutes">59 :</span>
-                                <span class="seconds">59</span>
+                            <div class="deadline">
+                                10.11.2023
                             </div>
                         </div>
                     </div>
@@ -167,7 +163,7 @@
 
                 <div class="item">
                     <div class="item_top">
-                        <span>В процессе</span>
+                        <span class="status">in progress</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
                     <div class="item_mid" id="in_progress">
@@ -181,7 +177,7 @@
 
                 <div class="item">
                     <div class="item_top">
-                        <span>Готово</span>
+                        <span class="status">done</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
                     <div class="item_mid" id="done">

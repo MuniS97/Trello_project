@@ -1,15 +1,28 @@
 {
   "users": [
     {
-      "id": 1,
-      "title": "Theme",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, nobis.",
-      "deadline": {
-        "days": 1,
-        "hours": 23,
-        "minutes": 59,
-        "seconds": 59
-      }
+      "name": "",
+      "description": "",
+      "participants": "alex",
+      "status": "todo",
+      "deadline": "",
+      "id": 1
+    },
+    {
+      "name": "",
+      "description": "",
+      "participants": "alex",
+      "status": "todo",
+      "deadline": "",
+      "id": 2
+    },
+    {
+      "name": "",
+      "description": "",
+      "participants": "alex",
+      "status": "todo",
+      "deadline": "",
+      "id": 3
     }
   ]
 }
