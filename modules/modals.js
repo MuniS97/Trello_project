@@ -163,7 +163,6 @@ for (let itemMId of itemMids) {
 let temp_id;
 
 function dragStart() {
-  console.log("dragStart");
   temp_id = this.id;
   this.className += " hold";
   setTimeout(() => (this.className = "invisible"), 0);
