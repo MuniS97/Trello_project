@@ -179,6 +179,22 @@ aside {
   }
 }
 
+// .modal_task_add{
+//   position: absolute;
+//   width: 800px;
+//   height: 400px;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   margin: 0 auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   // background-color: ;
+//   form{
+//     width: 300px;
+//   }
+// }
 .blue_bg {
   background-color: blue;
 }
@@ -489,37 +505,45 @@ aside {
   padding: 6px 10px;
 }
 
-
-
-
-
-
-
-
 .modal_main{
   width: 400px;
-  background-color: rgb(46, 44, 44);
+  background-color: #1d2125;
   border-radius: 8px;
   position: fixed !important;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
   padding: 50px;
-  position: relative;
   height: 450px;
   overflow-y: scroll;
   scroll-padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   visibility: hidden;
+  form{
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 12px;
+    width: 70%;
+    div{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
 }
 
 .modal_add{
-  width: 700px;
-  background-color: rgb(46, 44, 44);
+  width: 400px;
+  background-color: #1d2125;
   border-radius: 8px;
   position: fixed !important;
   left: 50%;
-  translate: -50%;
-  top: 180px;
+  translate: -50% -50%;
+  top: 50%;
   padding: 50px;
   position: relative;
   height: 450px;
@@ -633,6 +657,7 @@ input, select{
 .none{
   display: none;
 }
+
 
 .visible{
   display: block;

@@ -209,25 +209,30 @@
 		<button class="button_x">x</button>
 
 		<form name="create_new">
-			Напишите задачу
-			<input type="text" name="name">
-
-			Описание задачи
-			<input type="text" name="description">
-
-			Выберите участников команды
-			<select name="participants" id="participants"></select>
-
-			Выберите статус
-			<select name="status" id="">
-				<option value="todo">todo</option>
-				<option value="inprogress">inprogress</option>
-				<option value="done">done</option>
-			</select>
-
-			Выберите Дедлайн
-			<input type="date" name="deadline" id="">
-
+			<div>
+				Напишите задачу
+				<input type="text" name="name">
+			</div>
+			<div>
+				Описание задачи
+				<input type="text" name="description">
+			</div>
+			<div>
+				Выберите участников команды
+				<select name="participants" id="participants"></select>
+			</div>
+			<div>
+				Выберите статус
+				<select name="status" id="">
+					<option value="todo">todo</option>
+					<option value="inprogress">inprogress</option>
+					<option value="done">done</option>
+				</select>
+			</div>
+			<div>
+				Выберите Дедлайн
+				<input type="date" name="deadline" id="">
+			</div>
 			<button class="create_btn">Создать задачу</button>
 		</form>
 	</div>
@@ -281,10 +286,20 @@
 		</form>
 	</div>
 
-	<div class="modal_task_add">
+	<!-- <div class="modal_task_add">
 		<button class="button_x">x</button>
 
-	</div>
+		<form name="add_task">
+			<input type="text" name="title">
+			<input type="text" name="description">
+			<select name="status">
+				<option value="todo">todo</option>
+				<option value="inprogress">inprogress</option>
+				<option value="done">done</option>
+			</select>
+			<button>add task</button>
+		</form>
+	</div> -->
 	<script type="module" src="/main.js"></script>
 </body>
 

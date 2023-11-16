@@ -1,3 +1,11 @@
 {
-  "users": []
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Task One",
+      "description": "create back",
+      "participants": "Daler",
+      "deadline": "26.11.2023"
+    }
+  ]
 }

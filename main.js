@@ -1,26 +1,11 @@
-//ASIDE
+import { getData } from "../../modules/helpers";
+//ASIDE CODE
 let close_aside = document.querySelector(".close_aside");
 let open_aside = document.querySelector(".open_aside");
 let aside = document.querySelector("aside");
 let aside_class = document.querySelector(".aside");
 let content = document.querySelector("main");
 
-// MODAL
-let open_modal_btn = document.querySelector(".create");
-let modal_main = document.querySelector(".modal_main");
-let close_modal_btn = document.querySelectorAll(".button_x");
-let form_create = document.forms.create_new;
-let select_participants = document.querySelector("#participants");
-let form_add = document.forms.add_new;
-let modal_add = document.querySelector(".modal_add");
-let add_one = document.querySelector(".add_one");
-let boxes = document.querySelectorAll(".box_avatar");
-
-// DRAG AND DROP
-let tasks = document.querySelectorAll(".task");
-let item_mid = document.querySelectorAll(".item_mid");
-
-//ASIDE CODE
 open_aside.onclick = () => {
   aside.classList.remove("hide_main");
   aside_class.classList.remove("hide_aside");
@@ -41,8 +26,17 @@ close_aside.onclick = () => {
     aside_class.classList.add("hide");
   }, 1000);
 };
+// MODAL CODE
+let open_modal_btn = document.querySelector(".create");
+let modal_main = document.querySelector(".modal_main");
+let close_modal_btn = document.querySelectorAll(".button_x");
+let form_create = document.forms.create_new;
+let select_participants = document.querySelector("#participants");
+let form_add = document.forms.add_new;
+let modal_add = document.querySelector(".modal_add");
+let add_one = document.querySelector(".add_one");
+let boxes = document.querySelectorAll(".box_avatar");
 
-//MODAL CODE
 let res = ["alex", "adams", "john", "mike"];
 
 for (let key in res) {
@@ -113,31 +107,104 @@ form_add.onsubmit = (e) => {
 };
 
 // DRAG AND DROP CODE
-item_mid.forEach((box) => {
-	
-  box.ondragover = (e) => {
-    e.preventDefault();
-  };
+let tasks = document.querySelectorAll(".task");
+// let item_mid = document.querySelectorAll(".item_mid");
+let add_task_form = document.forms.create_new;
 
-  box.ondragenter = (e) => {
-    e.preventDefault();
-  };
-
-  tasks.forEach((task) => {
-
-    task.ondragstart = (e) => {
-
-      box.ondrop = () => {
-        box.append(e.target);
-      };
-
-      setTimeout(() => {
-        task.style.display = "none";
-      }, 0);
-    };
-	
-    task.ondragend = () => {
-      task.style.display = "block";
-    };
-  });
+getData("/tasks" + tasks)
+  .then((res) => {
+  console.log(res);
 });
+add_task_form.onsubmit = (e) => {
+  e.preventDefault();
+
+  let todo = {};
+  let fm = new FormData(add_task_form);
+  fm.forEach((value, key) => {
+    todo[key] = value;
+  });
+  getData.push(todo);
+  reload(getData);
+  form.reset();
+};
+reload(getData);
+
+function reload(arr) {
+  tasks.forEach((task) => (task.innerHTML = ""));
+
+  for (let item of arr) {
+    let div = document.createElement("div");
+    let b = document.createElement("b");
+    let p = document.createElement("p");
+
+    div.setAttribute("id", item.id);
+    div.setAttribute("class", "fill");
+    div.setAttribute("draggable", true);
+
+    b.innerHTML = item.title;
+    p.innerHTML = item.description;
+
+    div.append(b, p);
+
+    switch (item.status) {
+      case "todo":
+        tasks[0].append(div);
+        break;
+      case "inprogress":
+        tasks[1].append(div);
+        break;
+      case "done":
+        tasks[2].append(div);
+        break;
+    }
+    div.addEventListener("dragstart", dragStart);
+    div.addEventListener("dragend", dragEnd);
+  }
+}
+for (let task of tasks) {
+  task.addEventListener("dragover", dragOver);
+  task.addEventListener("dragenter", dragEnter);
+  task.addEventListener("dragleave", dragLeave);
+  task.addEventListener("drop", dragDrop);
+}
+
+let temp_id;
+
+function dragStart() {
+  console.log("dragStart");
+  temp_id = this.id;
+  this.className += " hold";
+  setTimeout(() => (this.className = "invisible"), 0);
+}
+
+function dragEnd() {
+  console.log("dragEnd");
+  this.className = "fill";
+}
+
+function dragOver(event) {
+  event.preventDefault();
+}
+
+function dragEnter(event) {
+  console.log("");
+  event.preventDefault();
+  this.className += " hovered";
+}
+
+function dragLeave() {
+  console.log("dragLeave");
+  this.className = "empty";
+  console.log(this);
+}
+
+function dragDrop(params) {
+  let temp = document.querySelectorAll(".empty div");
+
+  this.className = "task";
+  temp.forEach((item, index) => {
+    if (item.id === temp_id) {
+      this.append(item);
+    }
+  });
+}
