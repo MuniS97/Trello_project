@@ -1,3 +1,7 @@
+import { TASK_BOXES } from "../main";
+import { getData, postData } from "./http";
+import { reload_tasks } from "./ui";
+
 let close_aside = document.querySelector(".close_aside");
 let open_aside = document.querySelector(".open_aside");
 let aside = document.querySelector("aside");
@@ -64,17 +68,24 @@ add_one.onclick = () => {
 form_create.onsubmit = (e) => {
     e.preventDefault();
 
-    let arr = {}
+    let task = {}
 
     let fm = new FormData(form_create)
 
     fm.forEach((value, key) => {
-        arr[key] = value
+        task[key] = value
     })
+
+    postData('/tasks', task)
+        .then(res => {
+            if(res.status !== 200 && res.status !== 201) return 
+
+            getData('/tasks')   
+                .then(res => reload_tasks(res.data, TASK_BOXES))
+        })
 
     form_create.reset()
     modal_main.classList.remove('block')
-    console.log(arr);
 }
 
 
@@ -94,17 +105,17 @@ boxes.forEach(box => {
 form_add.onsubmit = (e) => {
     e.preventDefault();
 
-    let arr = {
+    let user = {
         img: choosed_avatar
     }
 
     let fm = new FormData(form_add)
 
     fm.forEach((value, key) => {
-        arr[key] = value
+        user[key] = value
     })
 
-    console.log(arr);
+    console.log(user);
 
     form_create.reset()
     modal_add.classList.remove('block')
