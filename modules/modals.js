@@ -43,6 +43,8 @@ let modal_add = document.querySelector('.modal_add')
 let add_one = document.querySelector('.add_one')
 let boxes = document.querySelectorAll('.box_avatar');
 
+let black_bg = document.querySelector('.black_bg')
+let add_card = document.querySelectorAll('.add_card')
 
 let res = ['alex', 'adams', 'john', 'mike']
 
@@ -52,17 +54,31 @@ for (let key in res) {
     select_participants.append(option)
 }
 
+add_card.forEach(el => {
+    el.onclick = () => {
+        modal_main.classList.add('block')
+        black_bg.style.display = 'block'
+        black_bg.classList.add('bg_open')
+    }
+})
+
 open_modal_btn.onclick = () => {
     modal_main.classList.add('block')
+    black_bg.style.display = 'block'
+    black_bg.classList.add('bg_open')
 }
 close_modal_btn.forEach(btn => {
     btn.onclick = () => {
         btn.parentElement.classList.remove('block')
+        black_bg.style.display = 'none'
+        black_bg.classList.remove('bg_open')
     }
 })
 
 add_one.onclick = () => {
     modal_add.classList.add('block')
+    black_bg.style.display = 'block'
+    black_bg.classList.add('bg_open')
 }
 
 form_create.onsubmit = (e) => {
