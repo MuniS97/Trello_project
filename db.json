@@ -1,28 +1,12 @@
 {
   "users": [
     {
-      "name": "",
-      "description": "",
+      "title": "LLLLlll",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, quibusdam?",
       "participants": "alex",
       "status": "todo",
-      "deadline": "",
+      "deadline": "11.11.2022",
       "id": 1
-    },
-    {
-      "name": "",
-      "description": "",
-      "participants": "alex",
-      "status": "todo",
-      "deadline": "",
-      "id": 2
-    },
-    {
-      "name": "",
-      "description": "",
-      "participants": "alex",
-      "status": "todo",
-      "deadline": "",
-      "id": 3
     }
   ]
 }
