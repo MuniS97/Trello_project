@@ -72,14 +72,15 @@ form_create.onsubmit = (e) => {
   });
 
   postData("/tasks", task).then((res) => {
-    if (res.status !== 200 && res.status !== 201) {
-      alert("Smth went wrong");
-      return;
-    }
-    reload(res.data);
-    form_create.reset();
-    modal_main.classList.remove("block");
+    if (res.status !== 200 && res.status !== 201) return;
+    getData("/tasks").then((res) => {
+      if (res.status !== 200 && res.status !== 201) return;
+      reload(res.data);
+    });
   });
+
+  form_create.reset();
+  modal_main.classList.remove("block");
 };
 
 let choosed_avatar;

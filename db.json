@@ -1,28 +1,3 @@
 {
-  "tasks": [
-    {
-      "name": "Design",
-      "description": "nothing to describe",
-      "participants": "adams",
-      "status": "inprogress",
-      "deadline": "0313-02-21",
-      "id": 1
-    },
-    {
-      "name": "Make project",
-      "description": "nothing to describe",
-      "participants": "mike",
-      "status": "todo",
-      "deadline": "11111-11-11",
-      "id": 2
-    },
-    {
-      "name": "Visa",
-      "description": "nothing to describe",
-      "participants": "alex",
-      "status": "done",
-      "deadline": "1111-11-11",
-      "id": 3
-    }
-  ]
+  "tasks": []
 }
