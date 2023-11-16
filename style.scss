@@ -646,12 +646,12 @@ input, select{
   display: none;
 }
 
+.hold {
+  border: 2px solid orange;
+}
 .visible{
   display: block;
 }
-
-
-
-
-
-
+.invisible {
+  display: none;
+}

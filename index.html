@@ -142,17 +142,19 @@
             <div class="box">
                 <div class="item">
                     <div class="item_top">
-                        <span class="status">to do</span>
+                        <span>To-do</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" id="new_task">
-                        <div class="task" id="task" draggable="true">
-                            <span class="title">Title</span>
-                            <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae minus ad quas culpa error ipsum nemo id cupiditate nesciunt</p>
-                            <div class="deadline">
-                                10.11.2023
-                            </div>
+                    <div class="item_mid" data-status="0" >
+                        <!-- <div class="task" >
+                            task
                         </div>
+                        <div class="task" >
+                            task
+                        </div>
+                        <div class="task" >
+                            task
+                        </div> -->
                     </div>
                     <div class="item_bot">
                         <button class="add_card">+ Добавить карточку</button>
@@ -166,7 +168,9 @@
                         <span class="status">in progress</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" id="in_progress">
+                    <div class="item_mid" data-status="1" >
+
+
                     </div>
                     <div class="item_bot">
                         <button class="add_card">+ Добавить карточку</button>
@@ -179,7 +183,9 @@
                         <span class="status">done</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" id="done">
+                    <div class="item_mid" data-status="2" > 
+
+                        
                     </div>
                     <div class="item_bot">
                         <button class="add_card">+ Добавить карточку</button>
@@ -203,7 +209,7 @@
 
         <form name="create_new">
             Напишите задачу
-            <input type="text" name="name">
+            <input type="text" name="title">
 
             Описание задачи
             <input type="text" name="description">
@@ -213,9 +219,9 @@
 
             Выберите статус
             <select name="status" id="">
-                <option value="todo">todo</option>
-                <option value="inprogress">inprogress</option>
-                <option value="done">done</option>
+                <option value="0">todo</option>
+                <option value="1">inprogress</option>
+                <option value="2">done</option>
             </select>
 
             Выберите Дедлайн
@@ -277,6 +283,7 @@
         </form>
     </div>
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/modules/modals.js"></script>
 </body>
 
 </html>

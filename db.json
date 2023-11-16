@@ -1,12 +1,36 @@
 {
-  "users": [
+  "tasks": [
     {
-      "title": "LLLLlll",
-      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, quibusdam?",
+      "id": 1,
+      "title": "task",
+      "deadline": "2023-11-24",
+      "description": "dfsjn",
+      "participants": "john",
+      "status": "1"
+    },
+    {
+      "title": "title",
+      "description": "dlkasmldkasm",
+      "participants": "john",
+      "status": "2",
+      "deadline": "2023-11-29",
+      "id": 2
+    },
+    {
+      "title": "new task",
+      "description": "ofdslkfjbnsdlk",
       "participants": "alex",
-      "status": "todo",
-      "deadline": "11.11.2022",
-      "id": 1
+      "status": "0",
+      "deadline": "1123-01-01",
+      "id": 3
+    },
+    {
+      "title": "hohoho",
+      "description": "kkkk",
+      "participants": "john",
+      "status": "2",
+      "deadline": "2023-12-01",
+      "id": 4
     }
   ]
 }
