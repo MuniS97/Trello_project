@@ -1,4 +1,4 @@
-import { getData } from "../../modules/helpers";
+import { getData, postData } from "/modules/helpers";
 //ASIDE CODE
 let close_aside = document.querySelector(".close_aside");
 let open_aside = document.querySelector(".open_aside");
@@ -108,26 +108,30 @@ form_add.onsubmit = (e) => {
 
 // DRAG AND DROP CODE
 let tasks = document.querySelectorAll(".task");
-// let item_mid = document.querySelectorAll(".item_mid");
+let item_mid = document.querySelectorAll(".item_mid");
 let add_task_form = document.forms.create_new;
 
-getData("/tasks" + tasks)
-  .then((res) => {
-  console.log(res);
+getData("/tasks").then((res) => {
+  console.log(res.data);
+  reload(res.data);
 });
 add_task_form.onsubmit = (e) => {
   e.preventDefault();
 
   let todo = {};
+
   let fm = new FormData(add_task_form);
   fm.forEach((value, key) => {
     todo[key] = value;
   });
-  getData.push(todo);
-  reload(getData);
-  form.reset();
+
+  add_task_form.reset();
+
+  postData("/tasks", todo).then((res) => {
+    if (res.status !== 200 && res.status !== 201) return;
+    console.log(res);
+  });
 };
-reload(getData);
 
 function reload(arr) {
   tasks.forEach((task) => (task.innerHTML = ""));
@@ -136,20 +140,26 @@ function reload(arr) {
     let div = document.createElement("div");
     let b = document.createElement("b");
     let p = document.createElement("p");
+    let deadline = document.createElement("span");
+    let participants = document.createElement("p");
 
     div.setAttribute("id", item.id);
     div.setAttribute("class", "fill");
+    b.classList.add('elem_title')
     div.setAttribute("draggable", true);
 
-    b.innerHTML = item.title;
+    b.innerHTML = item.name;
     p.innerHTML = item.description;
+    deadline.innerHTML = item.deadline;
+    participants.innerHTML = item.participants;
 
-    div.append(b, p);
+
+    div.append(b, p, deadline, participants);
 
     switch (item.status) {
       case "todo":
         tasks[0].append(div);
-        break;
+        break; 
       case "inprogress":
         tasks[1].append(div);
         break;

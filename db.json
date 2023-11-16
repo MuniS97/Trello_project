@@ -1,11 +1,28 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "Task One",
-      "description": "create back",
-      "participants": "Daler",
-      "deadline": "26.11.2023"
+      "name": "create Back",
+      "description": "dzfvzd",
+      "participants": "john",
+      "status": "inprogress",
+      "deadline": "2006-02-26",
+      "id": 2
+    },
+    {
+      "name": "Something",
+      "description": "vdfvzd",
+      "participants": "alex",
+      "status": "done",
+      "deadline": "2023-11-20",
+      "id": 3
+    },
+    {
+      "name": "bibi",
+      "description": "dzfvzd",
+      "participants": "adams",
+      "status": "todo",
+      "deadline": "2006-02-26",
+      "id": 4
     }
   ]
 }

@@ -12,3 +12,14 @@ export const getData = async (resource) => {
         return null
     }
 }
+export const postData = async (resource, body) => {
+    try {
+        const res = await axios.post(base_url + resource, body)
+
+        return res
+    } catch(e) {
+        console.log(e);
+        return null
+    }
+    
+}
