@@ -158,10 +158,10 @@ function reload(arr) {
 
     switch (item.status) {
       case "todo":
-        tasks[0].append(div);
+        item_mid[0].append(div);
         break; 
       case "inprogress":
-        tasks[1].append(div);
+        item[1].append(div);
         break;
       case "done":
         tasks[2].append(div);
