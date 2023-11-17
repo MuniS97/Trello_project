@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite</title>
+    <title>Vite App</title>
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./style.scss">
 </head>
@@ -108,21 +108,8 @@
                     <img src="./public/img/lw_header_analystic.svg" alt="">
                     <p>По доске</p>
                 </div>
-
-                <div class="dropdown-container">
-                    <img class="arrow-options" src="./public/img/lw_header_arrow_down.svg" alt="Dropdown Arrow">
-                    <div class="under-arrow">
-                        <a href="">todo</a>
-                        <hr>
-                        <a href="">inprogress</a>
-                        <hr>
-                        <a href="">done</a>
-                    </div>
-                </div>
-
+                <img class="afer_options" src="./public/img/lw_header_arrow_down.svg" alt="">
             </div>
-
-
             <div class="right_header">
                 <img src="./public/img/lw_header_rocket.svg" alt="">
                 <img src="./public/img/lw_header_storm.svg" alt="">
@@ -148,10 +135,32 @@
             <div class="box">
                 <div class="item">
                     <div class="item_top">
-                        <span>todo</span>
+                        <span>To-do</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" id="task_mid">
+                    <div class="item_mid" data-status="0" >
+                        <!-- <div class="task" >
+                            task
+                        </div>
+                        <div class="task" >
+                            task
+                        </div>
+                        <div class="task" >
+                            task
+                        </div> -->
+                    </div>
+                    <div class="item_bot">
+                        <button>+ Добавить карточку</button>
+                        <img src="./public/img/Frame.png" alt="">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_top">
+                        <span>В процессе</span>
+                        <button><img src="./public/img/Icon.png" alt=""></button>
+                    </div>
+                    <div class="item_mid" data-status="1" >
+
 
                     </div>
                     <div class="item_bot">
@@ -161,26 +170,12 @@
                 </div>
                 <div class="item">
                     <div class="item_top">
-                        <span>inprogress</span>
+                        <span>Готово</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid">
+                    <div class="item_mid" data-status="2" > 
 
                         
-                    </div>
-                    <div class="item_bot">
-                        <button>+ Добавить карточку</button>
-                        <img src="./public/img/Frame.png" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <span>done</span>
-                        <button><img src="./public/img/Icon.png" alt=""></button>
-                    </div>
-                    <div class="item_mid">
-
-
                     </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
@@ -195,15 +190,12 @@
     </main>
 
 
-
-
-
     <div class="modal_main">
         <button class="button_x">x</button>
 
         <form name="create_new">
             Напишите задачу
-            <input type="text" name="name">
+            <input type="text" name="title">
 
             Описание задачи
             <input type="text" name="description">
@@ -213,9 +205,9 @@
 
             Выберите статус
             <select name="status" id="">
-                <option value="todo">todo</option>
-                <option value="inprogress">inprogress</option>
-                <option value="done">done</option>
+                <option value="0">todo</option>
+                <option value="1">inprogress</option>
+                <option value="2">done</option>
             </select>
 
             Выберите Дедлайн
@@ -274,6 +266,7 @@
         </form>
     </div>
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/modules/modals.js"></script>
 </body>
 
 </html>

@@ -504,6 +504,7 @@ aside {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-height: 50px;
 }
 
 .item_mid .task {
@@ -704,12 +705,12 @@ input, select{
   display: none;
 }
 
+.hold {
+  border: 2px solid orange;
+}
 .visible{
   display: block;
 }
-
-
-
-
-
-
+.invisible {
+  display: none;
+}
