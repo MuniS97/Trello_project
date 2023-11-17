@@ -1,27 +1,35 @@
 {
   "tasks": [
     {
-      "name": "create Back",
-      "description": "dzfvzd",
+      "id": 1,
+      "title": "task",
+      "deadline": "2023-11-24",
+      "description": "dfsjn",
       "participants": "john",
-      "status": "inprogress",
-      "deadline": "2006-02-26",
+      "status": "1"
+    },
+    {
+      "title": "title",
+      "description": "dlkasmldkasm",
+      "participants": "john",
+      "status": "2",
+      "deadline": "2023-11-29",
       "id": 2
     },
     {
-      "name": "Something",
-      "description": "vdfvzd",
+      "title": "new task",
+      "description": "ofdslkfjbnsdlk",
       "participants": "alex",
-      "status": "done",
-      "deadline": "2023-11-20",
+      "status": "0",
+      "deadline": "1123-01-01",
       "id": 3
     },
     {
-      "name": "bibi",
-      "description": "dzfvzd",
-      "participants": "adams",
-      "status": "todo",
-      "deadline": "2006-02-26",
+      "title": "hohoho",
+      "description": "kkkk",
+      "participants": "john",
+      "status": "2",
+      "deadline": "2023-12-01",
       "id": 4
     }
   ]

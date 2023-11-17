@@ -204,6 +204,7 @@ aside {
 }
 
 .lower_header {
+  height: 60px;
   background: rgba(0, 0, 0, 0.24);
   display: flex;
   justify-content: space-between;
@@ -454,6 +455,7 @@ aside {
   border-radius: 8px;
   background-color: red;
   gap: 12px;
+  min-height: 50px;
 }
 
 .item_mid .task {
@@ -665,8 +667,12 @@ input, select{
   display: none;
 }
 
-
+.hold {
+  border: 2px solid orange;
+}
 .visible{
   display: block;
 }
-
+.invisible {
+  display: none;
+}
