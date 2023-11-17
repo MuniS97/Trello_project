@@ -31,3 +31,6 @@ export function dragDrop() {
 
     this.append(marked_div)
 }
+
+
+

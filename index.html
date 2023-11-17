@@ -138,7 +138,7 @@
                         <span>To-do</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="0" >
+                    <div class="item_mid" data-status="0">
                         <!-- <div class="task" >
                             task
                         </div>
@@ -159,7 +159,7 @@
                         <span>В процессе</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="1" >
+                    <div class="item_mid" data-status="1">
 
 
                     </div>
@@ -173,9 +173,9 @@
                         <span>Готово</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="2" > 
+                    <div class="item_mid" data-status="2">
 
-                        
+
                     </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
@@ -187,8 +187,22 @@
                 </div>
             </div>
         </div>
+
+        <div class="delete_task">
+            <img src="./public/delete_task_img.svg" alt="">
+        </div>
     </main>
 
+
+    <style>
+        .delete_task {
+            margin-bottom: 300px;
+            align-items: end;
+            text-align: right;
+            margin-right: 50px;
+            display: none;
+        }
+    </style>
 
     <div class="modal_main">
         <button class="button_x">x</button>
@@ -265,6 +279,12 @@
             <button class="create_btn">Добавить участника</button>
         </form>
     </div>
+
+
+
+
+
+
     <script type="module" src="/main.js"></script>
     <script type="module" src="/modules/modals.js"></script>
 </body>
