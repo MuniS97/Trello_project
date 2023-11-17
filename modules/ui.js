@@ -16,5 +16,12 @@ export function reload_tasks(arr, places) {
 
         div.ondragstart = dragStart
         div.ondragend = dragEnd
+
     }
+
+
+    
+
+    
 }
+
