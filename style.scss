@@ -459,18 +459,19 @@ main{
     right: 50px;
     bottom: 20px;
     animation: blackwhite 1s ease-in-out infinite;
+    display: none;
   }
   @keyframes blackwhite{
     0%{
-      background-color: red;
+      background-color: white;
       scale: 0;
       opacity: 100%;
     }
     50%{
-      background-color: brown;
+      background-color: black;
     }
     100%{
-      background-color: white;
+      background-color: black;
       scale: 1.1;
       opacity: 1%;
     }
@@ -483,6 +484,7 @@ main{
     bottom: 40px;
     border-radius: 100%;
     animation: basket 1s ease-in-out infinite;
+    display: none;
   }
   @keyframes basket{
     0%{

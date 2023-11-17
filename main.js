@@ -1,4 +1,4 @@
-import { dragDrop, dragEnter, dragLeave, dragOver } from "./modules/dragNdrop"
+import { dragDrop, dragEnter, dragLeave, dragOver, del} from "./modules/dragNdrop"
 import { getData } from "./modules/http"
 import { reload_tasks } from "./modules/ui"
 
@@ -16,3 +16,6 @@ TASK_BOXES.forEach(box => {
     box.ondrop = dragDrop
 })
 
+let basket = document.querySelector('.basket')
+basket.ondragover = dragOver
+basket.ondrop = del;
