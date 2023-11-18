@@ -20,3 +20,23 @@ export async function postData(path, body) {
         console.log(e);
     }
 }
+// export async function deleteData(path, body) {
+//     try {
+//         const res = await axios.post(base_url + path, body)
+
+//         return res
+//     } catch(e) {
+//         console.log(e);
+//     }
+// }
+export async function editData(path, body) {
+    try {
+        const res = await axios.patch(base_url + path, body)
+
+        return res
+    } catch(e) {
+        console.log(e);
+        return null
+    }
+    
+}

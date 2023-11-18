@@ -80,7 +80,7 @@ form_create.onsubmit = (e) => {
         .then(res => {
             if(res.status !== 200 && res.status !== 201) return 
 
-            getData('/tasks')   
+            getData('/tasks')
                 .then(res => reload_tasks(res.data, TASK_BOXES))
         })
 
