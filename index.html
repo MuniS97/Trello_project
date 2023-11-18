@@ -149,7 +149,7 @@
                             task
                         </div> -->
                     </div>
-                    <div class="item_bot">  
+                    <div class="item_bot">
                         <button>+ Добавить карточку</button>
                         <img src="./public/img/Frame.png" alt="">
                     </div>
@@ -158,7 +158,7 @@
                     <div class="item_top">
                         <span>В процессе</span>
 
-                       
+
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
                     <div class="item_mid" data-status="1">
@@ -188,7 +188,9 @@
                     <button>+ Добавить ещё одну колонку</button>
 
                     <div class="delete_task" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <button><img src="./public/delete_task_img.svg" alt=""></button>
+                        <button>
+                            <img src="./public/delete_task_img.svg" alt="">
+                        </button>
                     </div>
 
                 </div>
@@ -199,24 +201,21 @@
     </main>
 
     <script>
-       
+    
     </script>
 
     <style>
         .delete_task {
             margin-top: 30px;
-
             align-items: end;
             text-align: right;
             margin-right: 50px;
             /* display: none; */
         }
 
-       
-
-        /* .delete_task.active {
-            display: block;
-        } */
+        .delete_task button img:hover {
+            background-color: red;
+        }
 
         .delete_task img {
             width: 40px;
