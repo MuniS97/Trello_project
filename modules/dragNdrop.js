@@ -3,14 +3,16 @@ import axios from "axios";
 import { editData, getData, deleteData} from "./http";
 
 export function dragStart() {
-  this.id = "marked";
-  this.className += " hold";
-  setTimeout(() => (this.className = "invisible"), 0);
-  //   console.log(this);
+    garbage.classList.add('visible')
+    this.id = "marked";
+    this.className += " hold";
+    setTimeout(() => (this.className = "invisible"), 0);
+    //   console.log(this);
 }
 
 export function dragEnd() {
-  this.removeAttribute("id");
+    garbage.classList.remove('visible')
+    this.removeAttribute("id");
   this.className = "task";
 }
 
@@ -35,8 +37,10 @@ export function dragDrop() {
   this.className = "item_mid";
 
   this.append(marked_div);
+//   marked_div.remove()
 
-  getData("/tasks").then((res) => {
+  getData("/tasks")
+  .then((res) => {
     let given_task = res.data.find((task) => task.id == task_id);
 
     if (res.status !== 200 && res.status !== 201) return;
