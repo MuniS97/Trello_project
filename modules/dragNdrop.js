@@ -23,7 +23,6 @@ export function dragEnd() {
 	basket.style.display = 'none'
 }
 
-
 export function dragOver(event) {
 	event.preventDefault()
 }
@@ -32,7 +31,6 @@ export function dragEnter(event) {
 	event.preventDefault()
 	this.className += ' hovered'
 }
-
 
 export function dragLeave() {
 	this.className = 'item_mid'
