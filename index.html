@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="./style.scss">
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vite App</title>
+	<link rel="stylesheet" href="./main.css">
+	<link rel="stylesheet" href="./style.scss">
 </head>
 
 <body>
@@ -108,54 +108,7 @@
                     <img src="./public/img/lw_header_analystic.svg" alt="">
                     <p>По доске</p>
                 </div>
-
-                <div class="arrow_task">
-                    <img class="after_options" src="./public/img/lw_header_arrow_down.svg" alt="">
-                    <div class="task_statuses">
-                        <p>todo</p>
-                        <hr>
-                        <p>inprogress</p>
-                        <hr>
-                        <p>done</p>
-                    </div>
-                </div>
-
-
-                <style>
-                    .task_statuses {
-                        border-radius: 12px;
-                        align-items: center;
-                        text-align: center;
-                        width: 150px;
-                        background-color: white;
-                        display: none;
-                        position: absolute;
-                        z-index: 1;
-                    }
-
-                    .task_statuses p {
-                        margin-top: 4px;
-                        margin-bottom: 4px;
-                        cursor: pointer;
-                    }
-
-                    .arrow_task:hover .task_statuses {
-                        display: block;
-                    }
-                </style>
-
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        var afterOptions = document.querySelector(".after_options");
-                        var taskStatuses = document.querySelector(".task_statuses");
-
-                        afterOptions.addEventListener("click", function () {
-                            taskStatuses.style.display = (taskStatuses.style.display === "block") ? "none" : "block";
-                        });
-                    });
-
-                </script>
-
+                <img class="afer_options" src="./public/img/lw_header_arrow_down.svg" alt="">
             </div>
             <div class="right_header">
                 <img src="./public/img/lw_header_rocket.svg" alt="">
@@ -185,7 +138,7 @@
                         <span>To-do</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="0">
+                    <div class="item_mid" data-status="0" >
                         <!-- <div class="task" >
                             task
                         </div>
@@ -204,11 +157,9 @@
                 <div class="item">
                     <div class="item_top">
                         <span>В процессе</span>
-
-
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="1">
+                    <div class="item_mid" data-status="1" >
 
 
                     </div>
@@ -222,9 +173,9 @@
                         <span>Готово</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="2">
+                    <div class="item_mid" data-status="2" > 
 
-
+                        
                     </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
@@ -233,44 +184,14 @@
                 </div>
                 <div class="add_column">
                     <button>+ Добавить ещё одну колонку</button>
-
-                    <div class="delete_task">
-                        <button>
-                            <img src="./public/delete_task_img.svg" alt="">
-                        </button>
-                    </div>
-
                 </div>
             </div>
         </div>
-
-
     </main>
 
-    <script>
 
-    </script>
-
-    <style>
-        .delete_task {
-            margin-top: 30px;
-            align-items: end;
-            text-align: right;
-            margin-right: 50px;
-            /* display: none; */
-        }
-
-        .delete_task button img:hover {
-            background-color: red;
-        }
-
-        .delete_task img {
-            width: 40px;
-        }
-    </style>
-
-    <div class="modal_main">
-        <button class="button_x">x</button>
+	<div class="modal_main">
+		<button class="button_x">x</button>
 
         <form name="create_new">
             Напишите задачу
@@ -297,59 +218,54 @@
     </div>
 
 
-    <div class="modal_add">
-        <button class="button_x">x</button>
+	<div class="modal_add">
+		<button class="button_x">x</button>
 
-        <form name="add_new">
-            Имя Участника
-            <input type="text" name="name">
+		<form name="add_new">
+			Имя Участника
+			<input type="text" name="name">
 
-            Должность участника
-            <select name="status" id="">
-                <option value="Frontend developer">Frontend developer</option>
-                <option value="Designer">Designer</option>
-                <option value="Backend developer">Backend developer</option>
-                <option value="SMM specialist">SMM specialist</option>
-            </select>
+			Должность участника
+			<select name="status" id="">
+				<option value="Frontend developer">Frontend developer</option>
+				<option value="Designer">Designer</option>
+				<option value="Backend developer">Backend developer</option>
+				<option value="SMM specialist">SMM specialist</option>
+			</select>
 
-            Аватарка участника
-            <div class="avatars">
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-2810697.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-4876080.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-5953620.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-805390.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-avatar-805439.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-wolverine-1674293.png" alt="">
-                </div>
-                <div class="box_avatar">
-                    <img src="./public/img/free-icon-woman-3976696.png" alt="">
-                </div>
-            </div>
-
+			Аватарка участника
+			<div class="avatars">
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-2810697.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-4876080.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-5953620.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-805390.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-avatar-805439.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-wolverine-1674293.png" alt="">
+				</div>
+				<div class="box_avatar">
+					<img src="./public/img/free-icon-woman-3976696.png" alt="">
+				</div>
+			</div>
 
             <button class="create_btn">Добавить участника</button>
         </form>
     </div>
 
-
-
-
-
-
+	<img draggable="true" class="garbage" src="./public/img/garbage-removebg-preview.png" alt="">
     <script type="module" src="/main.js"></script>
     <script type="module" src="/modules/modals.js"></script>
 </body>
