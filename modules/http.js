@@ -23,7 +23,7 @@ export async function postData(path, body) {
 export async function patchData(path, body) {
     try {
         const res = await axios.patch(base_url + path, body)
-
+        console.log(res);
         return res
     } catch(e) {
         console.log(e);
