@@ -17,6 +17,8 @@ TASK_BOXES.forEach(box => {
     box.ondrop = dragDrop
 })
 
+
+
 let delete_tasks = document.querySelector('.delete_task img')
 
 
@@ -28,21 +30,19 @@ delete_tasks.ondragleave = dragLeave
 
 
 
-
 delete_tasks.ondrop = () => {
 
     let task_sucsess = document.getElementById("marked");
 
     getData("/tasks").then((res) => {
         res.data.forEach((item) => {
-            if (item.title == task_sucsess.innerHTML) {
+            if (item.title == task_sucsess.innerText) {
                 axios.delete(import.meta.env.VITE_BASE_URL + "/tasks/" + item.id).then((res) => {
                     if (res.status !== 200 && res.status !== 201) return;
                     task_sucsess.remove();
                 });
             }
         });
-
     });
 
 }

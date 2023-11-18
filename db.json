@@ -1,28 +1,3 @@
 {
-  "tasks": [
-    {
-      "id": 1,
-      "title": "task",
-      "deadline": "2023-11-24",
-      "description": "dfsjn",
-      "participants": "john",
-      "status": "1"
-    },
-    {
-      "title": "new task",
-      "description": "ofdslkfjbnsdlk",
-      "participants": "alex",
-      "status": "0",
-      "deadline": "1123-01-01",
-      "id": 3
-    },
-    {
-      "title": "new task",
-      "description": "xexeexexe",
-      "participants": "alex",
-      "status": "0",
-      "deadline": "1123-01-01",
-      "id": "2"
-    }
-  ]
+  "tasks": []
 }
