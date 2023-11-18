@@ -19,3 +19,30 @@ TASK_BOXES.forEach(box => {
 let basket = document.querySelector('.basket')
 basket.ondragover = dragOver
 basket.ondrop = del;
+
+let input_search = document.querySelector('.searcher_inp')
+
+input_search.onfocus = () => {
+
+    input_search.classList.add('search_anim')
+
+    let black_bg = document.querySelector('.black_bg')
+    let blur_bg = document.querySelector('.blur_bg')
+
+    black_bg.style.display = 'block'
+    blur_bg.style.display = 'block'
+
+    input_search.onkeyup = () => {
+        let value = input_search.value
+
+        console.log(document.queselector(value));
+    }
+    
+    input_search.onblur = () => {
+        input_search.classList.remove('search_anim')
+        
+        black_bg.style.display = 'none'
+        blur_bg.style.display = 'none'
+        input_search.style.width = '200px'
+    }
+}
