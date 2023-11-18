@@ -1,7 +1,7 @@
 import { dragEnd, dragStart } from "./dragNdrop";
 
 export function reload_tasks(arr, places) {
-    
+
     places.forEach(el => el.innerHTML = "");
 
     for (let item of arr) {
@@ -25,7 +25,7 @@ export function reload_tasks(arr, places) {
         img.addEventListener('dragover', (e) => {
             e.preventDefault();
         });
-    
+
         img.addEventListener('drop', (e) => {
             e.preventDefault();
             const task = e.dataTransfer.getData('text');
@@ -36,6 +36,7 @@ export function reload_tasks(arr, places) {
         });
     });
 
-    
+
+
     
 }

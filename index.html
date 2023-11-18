@@ -108,7 +108,54 @@
                     <img src="./public/img/lw_header_analystic.svg" alt="">
                     <p>По доске</p>
                 </div>
-                <img class="afer_options" src="./public/img/lw_header_arrow_down.svg" alt="">
+
+                <div class="arrow_task">
+                    <img class="after_options" src="./public/img/lw_header_arrow_down.svg" alt="">
+                    <div class="task_statuses">
+                        <p>todo</p>
+                        <hr>
+                        <p>inprogress</p>
+                        <hr>
+                        <p>done</p>
+                    </div>
+                </div>
+
+
+                <style>
+                    .task_statuses {
+                        border-radius: 12px;
+                        align-items: center;
+                        text-align: center;
+                        width: 150px;
+                        background-color: white;
+                        display: none;
+                        position: absolute;
+                        z-index: 1;
+                    }
+
+                    .task_statuses p {
+                        margin-top: 4px;
+                        margin-bottom: 4px;
+                        cursor: pointer;
+                    }
+
+                    .arrow_task:hover .task_statuses {
+                        display: block;
+                    }
+                </style>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var afterOptions = document.querySelector(".after_options");
+                        var taskStatuses = document.querySelector(".task_statuses");
+
+                        afterOptions.addEventListener("click", function () {
+                            taskStatuses.style.display = (taskStatuses.style.display === "block") ? "none" : "block";
+                        });
+                    });
+
+                </script>
+
             </div>
             <div class="right_header">
                 <img src="./public/img/lw_header_rocket.svg" alt="">
@@ -201,7 +248,7 @@
     </main>
 
     <script>
-    
+
     </script>
 
     <style>
