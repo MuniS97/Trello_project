@@ -135,10 +135,19 @@
             <div class="box">
                 <div class="item">
                     <div class="item_top">
-                        <span>go home</span>
+                        <span>To-do</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid">
+                    <div class="item_mid" data-status="0" >
+                        <!-- <div class="task" >
+                            task
+                        </div>
+                        <div class="task" >
+                            task
+                        </div>
+                        <div class="task" >
+                            task
+                        </div> -->
                     </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
@@ -150,7 +159,7 @@
                         <span>В процессе</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid">
+                    <div class="item_mid" data-status="1" >
 
 
                     </div>
@@ -164,7 +173,7 @@
                         <span>Готово</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid">
+                    <div class="item_mid" data-status="2" > 
 
                         
                     </div>
@@ -186,7 +195,7 @@
 
         <form name="create_new">
             Напишите задачу
-            <input type="text" name="name">
+            <input type="text" name="title">
 
             Описание задачи
             <input type="text" name="description">
@@ -196,9 +205,9 @@
 
             Выберите статус
             <select name="status" id="">
-                <option value="todo">todo</option>
-                <option value="inprogress">inprogress</option>
-                <option value="done">done</option>
+                <option value="0">todo</option>
+                <option value="1">inprogress</option>
+                <option value="2">done</option>
             </select>
 
             Выберите Дедлайн
@@ -251,11 +260,11 @@
                     <img src="./public/img/free-icon-woman-3976696.png" alt="">
                 </div>
             </div>
-
-
             <button class="create_btn">Добавить участника</button>
         </form>
     </div>
+    <img src="./public/img/trushBin.png" alt="bin" class="trush_bin">
+    
     <script type="module" src="/main.js"></script>
     <script type="module" src="/modules/modals.js"></script>
 </body>

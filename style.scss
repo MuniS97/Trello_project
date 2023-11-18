@@ -645,11 +645,22 @@ select {
   justify-content: space-between;
 }
 
+.trush_bin {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
 .none {
   display: none;
 }
 
-.visible {
+.hold {
+  border: 2px solid orange;
+}
+.visible{
   display: block;
 }
 .invisible {

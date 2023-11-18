@@ -1,4 +1,6 @@
-import { getData, postData } from "./helpers";
+import { TASK_BOXES } from "../main";
+import { getData, postData } from "./http";
+import { reload_tasks } from "./ui";
 
 let close_aside = document.querySelector(".close_aside");
 let open_aside = document.querySelector(".open_aside");
@@ -63,25 +65,25 @@ add_one.onclick = () => {
 form_create.onsubmit = (e) => {
   e.preventDefault();
 
-  let task = {};
+    let task = {}
 
   let fm = new FormData(form_create);
 
-  fm.forEach((value, key) => {
-    task[key] = value;
-  });
+    fm.forEach((value, key) => {
+        task[key] = value
+    })
 
-  postData("/tasks", task).then((res) => {
-    if (res.status !== 200 && res.status !== 201) return;
-    getData("/tasks").then((res) => {
-      if (res.status !== 200 && res.status !== 201) return;
-      reload(res.data);
-    });
-  });
+    postData('/tasks', task)
+        .then(res => {
+            if(res.status !== 200 && res.status !== 201) return 
 
-  form_create.reset();
-  modal_main.classList.remove("block");
-};
+            getData('/tasks')   
+                .then(res => reload_tasks(res.data, TASK_BOXES))
+        })
+
+    form_create.reset()
+    modal_main.classList.remove('block')
+}
 
 let choosed_avatar;
 
@@ -99,68 +101,20 @@ boxes.forEach((box) => {
 form_add.onsubmit = (e) => {
   e.preventDefault();
 
-  let arr = {
-    img: choosed_avatar,
-  };
-
-  let fm = new FormData(form_add);
-
-  fm.forEach((value, key) => {
-    arr[key] = value;
-  });
-
-  form_create.reset();
-  modal_add.classList.remove("block");
-};
-
-const itemMids = document.querySelectorAll(".item_mid");
-
-getData("/tasks").then((res) => {
-  if (res.status !== 200 && res.status !== 201) return;
-  reload(res.data);
-});
-
-function reload(arr) {
-  itemMids.forEach((item_mid) => (item_mid.innerHTML = ""));
-  for (let item of arr) {
-    let div = document.createElement("div");
-    let b = document.createElement("b");
-    let p = document.createElement("p");
-
-    div.setAttribute("id", item.id);
-    div.setAttribute("class", "task");
-    div.setAttribute("draggable", true);
-
-    b.innerHTML = item.name;
-    p.innerHTML = item.description;
-
-    div.append(b, p);
-
-    switch (item.status) {
-      case "todo":
-        itemMids[0].append(div);
-        break;
-      case "inprogress":
-        itemMids[1].append(div);
-        break;
-      case "done":
-        itemMids[2].append(div);
-        break;
+    let user = {
+        img: choosed_avatar
     }
 
     div.addEventListener("dragstart", dragStart);
     div.addEventListener("dragend", dragEnd);
+    
+    
+    fm.forEach((value, key) => {
+      user[key] = value
+    })
+    
+    console.log(user);
   }
-}
-
-for (let itemMId of itemMids) {
-  itemMId.addEventListener("dragover", dragOver);
-  itemMId.addEventListener("dragenter", dragEnter);
-  itemMId.addEventListener("dragleave", dragLeave);
-  itemMId.addEventListener("drop", dragDrop);
-}
-
-let temp_id;
 
 function dragStart() {
   temp_id = this.id;
