@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"json-server -p 8080 -w db.json\" \"vite\"",
     "build": "vite build",
-    "preview": "vite preview", 
+    "preview": "vite preview",
     "start": "json-server -p 8080 -w db.json"
   },
   "devDependencies": {

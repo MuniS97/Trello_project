@@ -1,6 +1,6 @@
 import { garbage } from "../main";
 import axios from "axios";
-import { editData, getData} from "./http";
+import { editData, getData, deleteData} from "./http";
 
 export function dragStart() {
   this.id = "marked";
@@ -41,7 +41,8 @@ export function dragDrop() {
 
     if (res.status !== 200 && res.status !== 201) return;
 
-    editData("/tasks/" + given_task.status, { status: box_id }).then((res) => {
+    editData("/tasks/" + given_task.status, { status: box_id })
+    .then((res) => {
       if (res.status !== 200 && res.status !== 201) return;
       console.log("code goes");
     });
@@ -51,11 +52,10 @@ export function garbagedrop() {
   let marked_div = document.getElementById("marked");
 
   let id = marked_div.getAttribute("data-id");
+  console.log(id);
 
-  axios
-    .delete(`/tasks/` + id)
-    .then((res) => console.log(`Deleted task with id ${id}`))
-    .catch((err) => console.error("task deleting", err));
+  deleteData(id)
+
 }
 export function garbageenter() {
   garbage.classList.add("garbage_active");

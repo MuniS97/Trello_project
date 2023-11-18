@@ -1,5 +1,4 @@
 import axios from "axios"
-
 const base_url = import.meta.env.VITE_BASE_URL
 
 export async function getData(path) {
@@ -20,15 +19,15 @@ export async function postData(path, body) {
         console.log(e);
     }
 }
-// export async function deleteData(path, body) {
-//     try {
-//         const res = await axios.post(base_url + path, body)
+export async function deleteData(taskId) {
+  try {
+    const res = await axios.delete(base_url + '/tasks' / taskId);
 
-//         return res
-//     } catch(e) {
-//         console.log(e);
-//     }
-// }
+    return res
+  } catch (e) {
+    console.error(e);
+  }
+}
 export async function editData(path, body) {
     try {
         const res = await axios.patch(base_url + path, body)
