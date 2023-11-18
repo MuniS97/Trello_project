@@ -1,36 +1,12 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "task",
-      "deadline": "2023-11-24",
-      "description": "dfsjn",
-      "participants": "john",
-      "status": "2"
-    },
-    {
-      "title": "new task",
-      "description": "ofdslkfjbnsdlk",
-      "participants": "alex",
-      "status": "0",
-      "deadline": "1123-01-01",
-      "id": 3
-    },
-    {
-      "title": "something",
-      "description": "dzfvzd",
-      "participants": "adams",
-      "status": "2",
-      "deadline": "2004-02-26",
-      "id": 4
-    },
-    {
-      "title": "delete back",
-      "description": "vdfvzd",
+      "title": "dasdsa",
+      "description": "dsa",
       "participants": "mike",
-      "status": "0",
+      "status": "1",
       "deadline": "",
-      "id": 5
+      "id": 1
     }
   ]
 }

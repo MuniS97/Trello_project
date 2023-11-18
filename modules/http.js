@@ -19,13 +19,13 @@ export async function postData(path, body) {
         console.log(e);
     }
 }
-export async function deleteData(taskId) {
+export async function deleteData(path) {
   try {
-    const res = await axios.delete(base_url + '/tasks' / taskId);
+    const res = await axios.delete(base_url + path);
 
     return res
   } catch (e) {
-    console.error(e);
+    console.log(e);
   }
 }
 export async function editData(path, body) {
