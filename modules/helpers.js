@@ -13,6 +13,10 @@ export const postData = async (resource, body) => {
   return res
 }
 
-export const removeData = async (resource) => {
-  const res = await axios.delete(base_url + resource)
+export const editData = async (resource, body) => {
+  const res = await axios.patch(base_url + resource, body)
+}
+
+export const removeData = async (body) => {
+  const res =  await axios.delete(base_url + body)
 }

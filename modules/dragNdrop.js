@@ -1,4 +1,4 @@
-
+import {removeData, editData} from '../modules/helpers' 
 
 let basket_remove = document.querySelector('.basket_remove')
 let basket = document.querySelector('.basket')
@@ -36,15 +36,23 @@ export function dragLeave() {
 }
 
 export function dragDrop() {
-    let marked_div = document.getElementById('marked')
+    let task = document.getElementById('marked')
     this.className = 'item_mid'
 
-    this.append(marked_div)
+    this.append(task)
+
+    editData('/tasks' + task.dataset.id, {status: this.dataset.status})
+        .then(res => {
+            console.log(res);
+        })
 }
 
 export function del() {
-
-
     let task = document.getElementById('marked')
+    
     task.remove();
+    removeData('/tasks', task.dataset.id)
+    .then(res => {
+            console.log(task);
+    })
 }
