@@ -497,7 +497,7 @@ aside {
 
 .modal_main{
   width: 400px;
-  background-color: rgb(46, 44, 44);
+  background-color: #1d2125;
   border-radius: 8px;
   position: fixed !important;
   top: 50%;
@@ -514,7 +514,7 @@ aside {
 
 .modal_add{
   width: 700px;
-  background-color: rgb(46, 44, 44);
+  background-color: #1d2125;
   border-radius: 8px;
   position: fixed !important;
   left: 50%;
@@ -636,10 +636,15 @@ input, select{
   display: none;
 }
 
+.hold {
+  border: 2px solid orange;
+}
 .visible{
   display: block;
 }
-
+.invisible {
+  display: none;
+}
 
 .bg_for_modal{
   width: 100%;
@@ -653,6 +658,18 @@ input, select{
   backdrop-filter: blur(8px);
 }
 
+.rubbish{
+  width: 100%;
+}
 
 
-
+.rubbish_box{
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  border: 3px solid black;
+  padding: 10px;
+  border-radius: 10px;
+}
