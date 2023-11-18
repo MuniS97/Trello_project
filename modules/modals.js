@@ -1,4 +1,5 @@
 import { TASK_BOXES } from "../main";
+import { dragDrop } from "./dragNdrop";
 import { getData, postData } from "./http";
 import { reload_tasks } from "./ui";
 
@@ -81,7 +82,10 @@ form_create.onsubmit = (e) => {
             if(res.status !== 200 && res.status !== 201) return 
 
             getData('/tasks')
-                .then(res => reload_tasks(res.data, TASK_BOXES))
+                .then(res => {
+                    reload_tasks(res.data, TASK_BOXES)
+                    dragDrop(res.data, TASK_BOXES)
+                })
         })
 
     form_create.reset()
