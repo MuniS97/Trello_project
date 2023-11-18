@@ -1,36 +1,12 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "task",
-      "deadline": "2023-11-24",
-      "description": "dfsjn",
-      "participants": "john",
-      "status": "1"
-    },
-    {
-      "title": "title",
-      "description": "dlkasmldkasm",
-      "participants": "john",
-      "status": "2",
-      "deadline": "2023-11-29",
-      "id": 2
-    },
-    {
-      "title": "new task",
-      "description": "ofdslkfjbnsdlk",
-      "participants": "alex",
-      "status": "0",
-      "deadline": "1123-01-01",
-      "id": 3
-    },
-    {
-      "title": "hohoho",
-      "description": "kkkk",
-      "participants": "john",
-      "status": "2",
-      "deadline": "2023-12-01",
-      "id": 4
+      "title": "dasdsa",
+      "description": "dsa",
+      "participants": "mike",
+      "status": "1",
+      "deadline": "",
+      "id": 1
     }
   ]
 }
