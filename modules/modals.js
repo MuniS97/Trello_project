@@ -42,7 +42,8 @@ let form_add = document.forms.add_new
 let modal_add = document.querySelector('.modal_add')
 let add_one = document.querySelector('.add_one')
 let boxes = document.querySelectorAll('.box_avatar');
-let modal_bg = document.querySelectorAll('.modal_bg')
+let modal_bg = document.querySelector('.modal_bg')
+
 
 
 let res = ['alex', 'adams', 'john', 'mike']
@@ -85,8 +86,10 @@ form_create.onsubmit = (e) => {
                 .then(res => reload_tasks(res.data, TASK_BOXES))
         })
 
-    form_create.reset()
+        form_create.reset()
+    modal_bg.classList.remove('bg_for_modal')
     modal_main.classList.remove('block')
+    
 }
 
 
@@ -120,30 +123,25 @@ form_add.onsubmit = (e) => {
 
     form_create.reset()
     modal_add.classList.remove('block')
+    modal_bg.classList.remove('bg_for_modal')
+
 }
-
-
 
 
 
 open_modal_btn.onclick = () => {
     modal_main.classList.add('block')
-    modal_bg.forEach(modal => {
-      modal.classList.add('bg_for_modal')
-    })
+    modal_bg.classList.add('bg_for_modal')
+    
   }
   close_modal_btn.forEach( btn => {
     btn.onclick = () => {
       btn.parentElement.classList.remove('block')
-      modal_bg.forEach(modal => {
-        modal.classList.remove('bg_for_modal')
-      })
+      modal_bg.classList.remove('bg_for_modal')
     }
   })
   
   add_one.onclick = () => {
     modal_add.classList.add('block')
-    modal_bg.forEach(modal => {
-      modal.classList.add('bg_for_modal')
-    })
+        modal_bg.classList.add('bg_for_modal')
   }
