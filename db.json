@@ -9,14 +9,6 @@
       "status": "1"
     },
     {
-      "title": "title",
-      "description": "dlkasmldkasm",
-      "participants": "john",
-      "status": "2",
-      "deadline": "2023-11-29",
-      "id": 2
-    },
-    {
       "title": "new task",
       "description": "ofdslkfjbnsdlk",
       "participants": "alex",
@@ -25,12 +17,12 @@
       "id": 3
     },
     {
-      "title": "hohoho",
-      "description": "kkkk",
-      "participants": "john",
-      "status": "2",
-      "deadline": "2023-12-01",
-      "id": 4
+      "title": "new task",
+      "description": "xexeexexe",
+      "participants": "alex",
+      "status": "0",
+      "deadline": "1123-01-01",
+      "id": "2"
     }
   ]
 }

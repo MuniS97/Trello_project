@@ -20,22 +20,6 @@ export function reload_tasks(arr, places) {
     }
 
 
-    const deleteTaskImages = document.querySelectorAll('.delete_task img');
-    deleteTaskImages.forEach(img => {
-        img.addEventListener('dragover', (e) => {
-            e.preventDefault();
-        });
-
-        img.addEventListener('drop', (e) => {
-            e.preventDefault();
-            const task = e.dataTransfer.getData('text');
-            const taskElement = document.querySelector(`[data-id=${task}]`);
-            if (taskElement) {
-                taskElement.remove();
-            }
-        });
-    });
-
 
 
     
