@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Vite App</title>
-	<link rel="stylesheet" href="./main.css">
-	<link rel="stylesheet" href="./style.scss">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./style.scss">
 </head>
 
 <body>
@@ -29,8 +29,27 @@
         <div class="right">
             <div class="searcher">
                 <img width="16px" height="16px" src="./public/img/searcher_icon.svg" alt="">
-                <input class="searcher_inp" type="text" name="searcher" placeholder="Поиск">
+                <input class="searcher_inp" type="text" name="searcher" placeholder="Поиск" onfocus="expandInput(this)"
+                    onblur="shrinkInput(this)">
+
             </div>
+
+
+            <script>
+                function expandInput(input) {
+                    input.style.width = '400px';
+                    // document.querySelector('body').style.color = ;
+                }
+
+                function shrinkInput(input) {
+                    input.style.width = '200px';
+                    // document.querySelector('.blur-background').style.display = 'none';
+                }
+
+
+            </script>
+
+
             <div class="user_info">
                 <img src="./public/img/bell.svg" alt="">
                 <img src="./public/img/q_mark.svg" alt="">
@@ -138,7 +157,7 @@
                         <span>To-do</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="0" >
+                    <div class="item_mid" data-status="0">
                         <!-- <div class="task" >
                             task
                         </div>
@@ -159,7 +178,7 @@
                         <span>В процессе</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="1" >
+                    <div class="item_mid" data-status="1">
 
 
                     </div>
@@ -173,9 +192,9 @@
                         <span>Готово</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="2" > 
+                    <div class="item_mid" data-status="2">
 
-                        
+
                     </div>
                     <div class="item_bot">
                         <button>+ Добавить карточку</button>
@@ -190,8 +209,8 @@
     </main>
 
 
-	<div class="modal_main">
-		<button class="button_x">x</button>
+    <div class="modal_main">
+        <button class="button_x">x</button>
 
         <form name="create_new">
             Напишите задачу
@@ -218,54 +237,54 @@
     </div>
 
 
-	<div class="modal_add">
-		<button class="button_x">x</button>
+    <div class="modal_add">
+        <button class="button_x">x</button>
 
-		<form name="add_new">
-			Имя Участника
-			<input type="text" name="name">
+        <form name="add_new">
+            Имя Участника
+            <input type="text" name="name">
 
-			Должность участника
-			<select name="status" id="">
-				<option value="Frontend developer">Frontend developer</option>
-				<option value="Designer">Designer</option>
-				<option value="Backend developer">Backend developer</option>
-				<option value="SMM specialist">SMM specialist</option>
-			</select>
+            Должность участника
+            <select name="status" id="">
+                <option value="Frontend developer">Frontend developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Backend developer">Backend developer</option>
+                <option value="SMM specialist">SMM specialist</option>
+            </select>
 
-			Аватарка участника
-			<div class="avatars">
-				<div class="box_avatar">
-					<img src="./public/img/free-icon-avatar-2810697.png" alt="">
-				</div>
-				<div class="box_avatar">
-					<img src="./public/img/free-icon-avatar-4876080.png" alt="">
-				</div>
-				<div class="box_avatar">
-					<img src="./public/img/free-icon-avatar-5953620.png" alt="">
-				</div>
-				<div class="box_avatar">
-					<img src="./public/img/free-icon-avatar-805390.png" alt="">
-				</div>
-				<div class="box_avatar">
-					<img src="./public/img/free-icon-avatar-805439.png" alt="">
-				</div>
-				<div class="box_avatar">
-					<img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
-				</div>
-				<div class="box_avatar">
-					<img src="./public/img/free-icon-wolverine-1674293.png" alt="">
-				</div>
-				<div class="box_avatar">
-					<img src="./public/img/free-icon-woman-3976696.png" alt="">
-				</div>
-			</div>
+            Аватарка участника
+            <div class="avatars">
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-2810697.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-4876080.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-5953620.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-805390.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-avatar-805439.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-man-avatar-3334037.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-wolverine-1674293.png" alt="">
+                </div>
+                <div class="box_avatar">
+                    <img src="./public/img/free-icon-woman-3976696.png" alt="">
+                </div>
+            </div>
 
             <button class="create_btn">Добавить участника</button>
         </form>
     </div>
 
-	<img draggable="true" class="garbage" src="./public/img/garbage-removebg-preview.png" alt="">
+    <img draggable="true" class="garbage" src="./public/img/garbage-removebg-preview.png" alt="">
     <script type="module" src="/main.js"></script>
     <script type="module" src="/modules/modals.js"></script>
 </body>

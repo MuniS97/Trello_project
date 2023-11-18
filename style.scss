@@ -101,9 +101,11 @@ header {
         left: 5%;
       }
       input {
+        transition: width 0.3s ease;
+        width: 400px;
         width: 220px;
         height: 32px;
-        border-radius: 5px;
+        border-radius: 5px; 
         border: 1px solid rgba(166, 197, 226, 0.16);
         color: #8c9bab;
         background: #22272b;
