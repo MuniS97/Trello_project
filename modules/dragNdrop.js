@@ -1,7 +1,4 @@
-import {
-	removeData,
-	editData
-} from '../modules/helpers'
+import { removeData, editData } from '../modules/helpers'
 
 let basket_remove = document.querySelector('.basket_remove')
 let basket = document.querySelector('.basket')
