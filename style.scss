@@ -666,3 +666,7 @@ select {
 .invisible {
   display: none;
 }
+
+.blur {
+  filter: blur(4px);
+}

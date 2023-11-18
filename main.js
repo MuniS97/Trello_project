@@ -29,3 +29,30 @@ trushBin.ondragover = dragOver;
 trushBin.ondragenter = ondragenter;
 trushBin.ondragleave = ondragleave;
 trushBin.ondrop = ondropbin;
+
+let searchInp = document.querySelector(".searcher_inp");
+let body = document.querySelector("main");
+
+searchInp.onfocus = () => {
+  body.classList.add("blur");
+};
+searchInp.onblur = () => {
+  body.classList.remove("blur");
+};
+
+searchInp.onkeyup = () => {
+  let val = searchInp.value;
+
+  getData("/tasks").then((res) => {
+    if (res.status !== 200 && res.status !== 201) return;
+
+    
+    res.data.filter((task) => {
+      if ((task.title = val)) {
+        console.log(task.title, task.id);
+      }
+    });
+
+
+  });
+};
