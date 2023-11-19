@@ -1,9 +1,16 @@
-import { dragDrop, dragEnter, dragLeave, dragOver } from "./modules/dragNdrop";
+import { dragDrop, dragEnter, dragLeave, dragOver, del } from "./modules/dragNdrop";
 import { getData } from "./modules/http";
 import { reload_tasks } from "./modules/ui";
 
+
+
 export let TASK_BOXES = document.querySelectorAll(".item_mid");
-export let garbage = document.querySelector(".garbage");
+
+let basket = document.querySelector('.basket')
+basket.ondragover = dragOver
+basket.ondrop = dragDrop
+basket.ondrop = del
+
 getData("/tasks").then((res) => {
     reload_tasks(res.data, TASK_BOXES);
 });

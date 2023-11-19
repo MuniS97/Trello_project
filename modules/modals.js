@@ -1,3 +1,4 @@
+import { isToday, startOfToday } from "date-fns";
 import { TASK_BOXES } from "../main";
 import { dragDrop } from "./dragNdrop";
 import { getData, postData } from "./http";
@@ -9,7 +10,18 @@ let aside = document.querySelector("aside");
 let aside_class = document.querySelector(".aside");
 let content = document.querySelector("main");
 
+function date() {
+    let date = document.querySelector('.date')
 
+    let newDate = new Date()
+    let seporate = newDate.toLocaleDateString().split('.')
+    let day = seporate[0]
+    let month = seporate[1]
+    let year = seporate[2]
+
+    date.value = `${year}-${month}-${day}`
+}
+date()
 
 open_aside.onclick = () => {
     aside.classList.remove("hide_main");
@@ -45,6 +57,7 @@ let add_one = document.querySelector('.add_one')
 let boxes = document.querySelectorAll('.box_avatar');
 
 let black_bg = document.querySelector('.black_bg')
+let blur_bg = document.querySelector('.blur_bg')
 let add_card = document.querySelectorAll('.add_card')
 
 let res = ['alex', 'adams', 'john', 'mike']
@@ -55,59 +68,7 @@ for (let key in res) {
     select_participants.append(option)
 }
 
-add_card.forEach(el => {
-    el.onclick = () => {
-        modal_main.classList.add('block')
-        black_bg.style.display = 'block'
-        black_bg.classList.add('bg_open')
-    }
-})
-
-open_modal_btn.onclick = () => {
-    modal_main.classList.add('block')
-    black_bg.style.display = 'block'
-    black_bg.classList.add('bg_open')
-}
-close_modal_btn.forEach(btn => {
-    btn.onclick = () => {
-        btn.parentElement.classList.remove('block')
-        black_bg.style.display = 'none'
-        black_bg.classList.remove('bg_open')
-    }
-})
-
-add_one.onclick = () => {
-    modal_add.classList.add('block')
-    black_bg.style.display = 'block'
-    black_bg.classList.add('bg_open')
-}
-
-form_create.onsubmit = (e) => {
-    e.preventDefault();
-
-    let task = {}
-
-    let fm = new FormData(form_create)
-
-    fm.forEach((value, key) => {
-        task[key] = value
-    })
-
-    postData('/tasks', task)
-        .then(res => {
-            if(res.status !== 200 && res.status !== 201) return 
-
-            getData('/tasks')
-                .then(res => {
-                    reload_tasks(res.data, TASK_BOXES)
-                    dragDrop(res.data, TASK_BOXES)
-                })
-        })
-
-    form_create.reset()
-    modal_main.classList.remove('block')
-}
-
+let btns = document.querySelectorAll('button')
 
 let choosed_avatar
 
@@ -140,3 +101,50 @@ form_add.onsubmit = (e) => {
     form_create.reset()
     modal_add.classList.remove('block')
 }
+
+btns.forEach(btn => {
+    btn.onclick = (e) => {
+        e.preventDefault();
+        if(btn.classList == 'create' || btn.classList == 'add_card') {
+            modal_main.classList.add('modal_anim')
+            modal_main.classList.add('modal_z-index')
+            black_bg.classList.add('bg_anim')
+            blur_bg.classList.add('bg_anim')
+        }
+        if(btn.classList == 'button_x') {
+            modal_main.classList.remove('modal_anim')
+            modal_add.classList.remove('modal_anim')
+            black_bg.classList.remove('bg_anim')
+            blur_bg.classList.remove('bg_anim')
+        }
+        if(btn.classList == 'add_one') {
+            modal_add.classList.add('modal_anim')
+            modal_add.classList.add('modal_z-index')
+            black_bg.classList.add('bg_anim')
+            blur_bg.classList.add('bg_anim')
+        }
+        if(btn.classList == 'create_btn') {
+            let task = {}
+
+            let fm = new FormData(form_create)
+        
+            fm.forEach((value, key) => {
+                task[key] = value
+            })
+        
+            postData('/tasks', task)
+                .then(res => {
+                    if(res.status !== 200 && res.status !== 201) return 
+        
+                    getData('/tasks')
+                        .then(res => {
+                            reload_tasks(res.data, TASK_BOXES)
+                            dragDrop(res.data, TASK_BOXES)
+                        })
+                })
+        
+            form_create.reset()
+            modal_main.classList.remove('block')
+        }
+    }
+})

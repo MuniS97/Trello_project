@@ -35,21 +35,22 @@ export function dragLeave() {
 
 export function dragDrop() {
 	let task = document.getElementById('marked')
-	this.className = 'item_mid'
+		this.className = 'item_mid';
 
-	
+
 	editData('/tasks/' + task.dataset.id, {
 		status: this.dataset.status
 	})
-	.then(res => {
-		console.log(res);
-	})
+		.then(res => {
+
+		})
 	this.append(task)
 }
 
 export function del() {
 	let task = document.getElementById('marked')
+
 	removeData('/tasks/' + task.dataset.id)
-		.then(res => {})
+		.then(res => { })
 	task.remove();
 }
