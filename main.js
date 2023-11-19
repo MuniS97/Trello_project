@@ -1,5 +1,5 @@
 import { dragDrop, dragEnter, dragLeave, dragOver, del } from "./modules/dragNdrop";
-import { getData } from "./modules/http";
+import { getData } from "./modules/helpers";
 import { reload_tasks } from "./modules/ui";
 
 

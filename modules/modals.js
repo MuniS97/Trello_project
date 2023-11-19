@@ -1,6 +1,6 @@
 import { TASK_BOXES } from "../main";
 import { dragDrop } from "./dragNdrop";
-import { getData, postData } from "./http";
+import { getData, postData } from "./helpers";
 import { reload_tasks } from "./ui";
 
 let close_aside = document.querySelector(".close_aside");
@@ -20,6 +20,7 @@ function date() {
 
     date.value = `${year}-${month}-${day}`
 }
+
 date()
 
 open_aside.onclick = () => {
@@ -45,95 +46,65 @@ close_aside.onclick = () => {
 
 // rukhshona's code
 
-let open_modal_btn = document.querySelector('.create')
 let modal_main = document.querySelector('.modal_main')
-let close_modal_btn = document.querySelectorAll('.button_x')
 let form_create = document.forms.create_new
+let new_acc = document.forms.modal_add
 let select_participants = document.querySelector('#participants')
-let form_add = document.forms.add_new
 let modal_add = document.querySelector('.modal_add')
-let add_one = document.querySelector('.add_one')
-let boxes = document.querySelectorAll('.box_avatar');
 
 let black_bg = document.querySelector('.black_bg')
 let blur_bg = document.querySelector('.blur_bg')
-let add_card = document.querySelectorAll('.add_card')
 
-let res = ['alex', 'adams', 'john', 'mike']
+let boxes = document.querySelectorAll('.box_avatar');
+let selected
 
-for (let key in res) {
-    let option = new Option(res[key])
-
-    select_participants.append(option)
-}
-
-let btns = document.querySelectorAll('button')
-
-let choosed_avatar
-
-boxes.forEach(box => {
-    box.onclick = () => {
-        boxes.forEach(box => {
-            box.classList.remove('box_selected')
+boxes.forEach(avatar => {
+    avatar.onclick = () => {
+        boxes.forEach(avatar => {
+            avatar.classList.remove('box_selected')
         })
-        box.classList.add('box_selected')
-        choosed_avatar = box.childNodes[1].src.split(5175).at(-1)
-        console.log(box.childNodes[1].src.split('img/').at(-1));
+        avatar.classList.add('box_selected')
+        selected = avatar.childNodes[1].src.split('img/').at(-1)
     }
 })
 
-form_add.onsubmit = (e) => {
-    e.preventDefault();
-
-    let user = {
-        img: choosed_avatar
-    }
-
-    let fm = new FormData(form_add)
-
-    fm.forEach((value, key) => {
-        user[key] = value
-    })
-
-    console.log(user);
-
-    form_create.reset()
-    modal_add.classList.remove('block')
-}
-
+let btns = document.querySelectorAll('button')
 btns.forEach(btn => {
     btn.onclick = (e) => {
         e.preventDefault();
-        if(btn.classList == 'create' || btn.classList == 'add_card') {
+        if (btn.classList == 'create' || btn.classList == 'add_card') {
+            search_inp.style.zIndex = '1'
             modal_main.classList.add('modal_anim')
             black_bg.classList.add('bg_anim')
             blur_bg.classList.add('bg_anim')
+            black_bg.classList.remove('bg_anim_vanish')
+            blur_bg.classList.remove('bg_anim_vanish')
         }
-        if(btn.classList == 'button_x') {
+        if (btn.classList == 'button_x') {
             modal_main.classList.remove('modal_anim')
             modal_add.classList.remove('modal_anim')
             black_bg.classList.remove('bg_anim')
             blur_bg.classList.remove('bg_anim')
         }
-        if(btn.classList == 'add_one') {
+        if (btn.classList == 'add_one') {
             modal_add.classList.add('modal_anim')
             modal_add.classList.add('modal_z-index')
             black_bg.classList.add('bg_anim')
             blur_bg.classList.add('bg_anim')
         }
-        if(btn.classList == 'create_btn') {
+        if (btn.classList == 'create_btn') {
             let task = {}
 
             let fm = new FormData(form_create)
-        
+
             fm.forEach((value, key) => {
                 task[key] = value
             })
-        
+
             postData('/tasks', task)
                 .then(res => {
-                    if(res.status !== 200 && res.status !== 201) return 
-        
+                    if (res.status !== 200 && res.status !== 201) return
+
                     getData('/tasks')
                         .then(res => {
                             reload_tasks(res.data, TASK_BOXES)
@@ -145,5 +116,83 @@ btns.forEach(btn => {
             black_bg.classList.remove('bg_anim')
             blur_bg.classList.remove('bg_anim')
         }
+        if (btn.classList == 'create_acc') {
+
+            let user = {}
+
+            let fm = new FormData(new_acc)
+
+            fm.forEach((value, key) => {
+                user[key] = value
+
+                user.avatar = selected
+
+                postData('/users' , user)
+                    .then(res => {
+                        if(res.status !== 200 && res.status !== 201) return
+                        form_create.reset()
+                        modal_main.classList.remove('modal_anim')
+                        modal_add.classList.remove('modal_anim')
+                        black_bg.classList.remove('bg_anim')
+                        blur_bg.classList.remove('bg_anim')
+                        getData('/users')
+                        .then(res => {
+                            let option = new Option(res[key])
+                            select_participants.append(option)
+                        })
+                    })
+            })
+        }
     }
 })
+
+let search_inp = document.querySelector('.searcher_inp')
+
+search_inp.onfocus = () => {
+    search_inp.style.zIndex = '3'
+    search_inp.classList.add('focus')
+    search_inp.classList.remove('compression')
+
+    black_bg.classList.remove('bg_anim_vanish')
+    black_bg.classList.add('bg_anim')
+    
+    blur_bg.classList.remove('bg_anim_vanish')
+    blur_bg.classList.add('bg_anim')
+
+}
+search_inp.onblur = () => {
+    let tasks_all = document.querySelectorAll('.task')
+    tasks_all.forEach(task => {
+        task.style = 'z-index: 0; box-shadow: none;'
+    })
+    
+    search_inp.classList.remove('focus')
+    search_inp.classList.add('compression')
+    
+    black_bg.classList.add('bg_anim_vanish')
+    blur_bg.classList.add('bg_anim_vanish')
+    search_inp.value = ''
+    
+    setTimeout(() => {
+        black_bg.classList.remove('bg_anim')
+        blur_bg.classList.remove('bg_anim')
+    }, 500);
+}
+
+search_inp.oninput = () => {
+    let input = document.querySelector('.searcher_inp')
+    let result = input.value.toLowerCase()
+    let tasks_all = document.querySelectorAll('.task')
+    if(result !== '' && input.value.length > 3) {
+        tasks_all.forEach(task => {
+            if(task.innerText.toLowerCase().search(result) !== -1) {
+                task.style = 'z-index: 3; box-shadow: 0 0 15px white;'
+            }
+        })
+    }
+    else {
+        tasks_all.forEach(task => {
+            task.style = 'z-index: 0; box-shadow: none'
+        })
+    }
+}
