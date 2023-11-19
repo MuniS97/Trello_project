@@ -203,3 +203,10 @@ search_inp.oninput = () => {
         })
     }
 }
+
+let items = document.querySelectorAll('.item')
+items.forEach(item => {
+    item.onclick = () => {
+        item.scrollTo(0, 200)
+    }
+}) 
