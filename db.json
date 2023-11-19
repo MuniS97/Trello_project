@@ -4,14 +4,6 @@
       "title": "Сделать новый проект",
       "description": "Создать проект в ГитХабе",
       "participants": "john",
-      "status": "2",
-      "deadline": "2023-11-19",
-      "id": 1
-    },
-    {
-      "title": "Сделать новый проект",
-      "description": "Создать проект в ГитХабе",
-      "participants": "john",
       "status": "1",
       "deadline": "2023-11-19",
       "id": 1
@@ -22,7 +14,7 @@
       "participants": "john",
       "status": "1",
       "deadline": "2023-11-19",
-      "id": 1
+      "id": 2
     },
     {
       "title": "Сделать новый проект",
@@ -30,7 +22,7 @@
       "participants": "john",
       "status": "1",
       "deadline": "2023-11-19",
-      "id": 1
+      "id": 3
     },
     {
       "title": "Сделать новый проект",
@@ -38,7 +30,7 @@
       "participants": "john",
       "status": "1",
       "deadline": "2023-11-19",
-      "id": 1
+      "id": 4
     },
     {
       "title": "Сделать новый проект",
@@ -46,7 +38,7 @@
       "participants": "john",
       "status": "1",
       "deadline": "2023-11-19",
-      "id": 1
+      "id": 5
     },
     {
       "title": "Сделать новый проект",
@@ -54,7 +46,15 @@
       "participants": "john",
       "status": "1",
       "deadline": "2023-11-19",
-      "id": 1
+      "id": 6
+    },
+    {
+      "title": "Сделать новый проект",
+      "description": "Создать проект в ГитХабе",
+      "participants": "john",
+      "status": "1",
+      "deadline": "2023-11-19",
+      "id": 7
     },
     {
       "title": "Привет",
@@ -62,7 +62,7 @@
       "participants": "john",
       "status": "1",
       "deadline": "2023-11-19",
-      "id": 1
+      "id": 8
     }
   ],
   "users": []

@@ -83,14 +83,21 @@ btns.forEach(btn => {
         if (btn.classList == 'button_x') {
             modal_main.classList.remove('modal_anim')
             modal_add.classList.remove('modal_anim')
-            black_bg.classList.remove('bg_anim')
-            blur_bg.classList.remove('bg_anim')
+            black_bg.classList.add('bg_anim_vanish')
+            blur_bg.classList.add('bg_anim_vanish')
+            search_inp.value = ''
+            
+            setTimeout(() => {
+                black_bg.classList.remove('bg_anim')
+                blur_bg.classList.remove('bg_anim')
+            }, 500);
         }
         if (btn.classList == 'add_one') {
             modal_add.classList.add('modal_anim')
-            modal_add.classList.add('modal_z-index')
             black_bg.classList.add('bg_anim')
             blur_bg.classList.add('bg_anim')
+            black_bg.classList.remove('bg_anim_vanish')
+            blur_bg.classList.remove('bg_anim_vanish')
         }
         if (btn.classList == 'create_btn') {
             let task = {}
@@ -186,7 +193,7 @@ search_inp.oninput = () => {
     if(result !== '' && input.value.length > 3) {
         tasks_all.forEach(task => {
             if(task.innerText.toLowerCase().search(result) !== -1) {
-                task.style = 'z-index: 3; box-shadow: 0 0 15px white;'
+                task.style = 'z-index: 3; box-shadow: 0 0 15px gold;'
             }
         })
     }
