@@ -1,3 +1,12 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "title": "Сделать новый проект",
+      "description": "Создать проект в ГитХабе",
+      "participants": "john",
+      "status": "1",
+      "deadline": "2023-11-19",
+      "id": 1
+    }
+  ]
 }
