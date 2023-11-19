@@ -1,4 +1,3 @@
-import { isToday, startOfToday } from "date-fns";
 import { TASK_BOXES } from "../main";
 import { dragDrop } from "./dragNdrop";
 import { getData, postData } from "./http";
@@ -107,7 +106,6 @@ btns.forEach(btn => {
         e.preventDefault();
         if(btn.classList == 'create' || btn.classList == 'add_card') {
             modal_main.classList.add('modal_anim')
-            modal_main.classList.add('modal_z-index')
             black_bg.classList.add('bg_anim')
             blur_bg.classList.add('bg_anim')
         }
@@ -142,9 +140,10 @@ btns.forEach(btn => {
                             dragDrop(res.data, TASK_BOXES)
                         })
                 })
-        
             form_create.reset()
-            modal_main.classList.remove('block')
+            modal_main.classList.remove('modal_anim')
+            black_bg.classList.remove('bg_anim')
+            blur_bg.classList.remove('bg_anim')
         }
     }
 })
