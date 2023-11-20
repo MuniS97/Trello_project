@@ -57,8 +57,8 @@
       "id": 7
     },
     {
-      "title": "Привет",
-      "description": "Создать проект в ГитХабе",
+      "title": "Найти этот элемент",
+      "description": "Прокрутить скроллбар до него",
       "participants": "john",
       "status": "1",
       "deadline": "2023-11-19",

@@ -193,7 +193,12 @@ search_inp.oninput = () => {
     if(result !== '' && input.value.length > 3) {
         tasks_all.forEach(task => {
             if(task.innerText.toLowerCase().search(result) !== -1) {
-                task.style = 'z-index: 3; box-shadow: 0 0 15px gold;'
+                task.style = 'z-index: 3; box-shadow: 0 0 15px gold inset'
+
+                let scrollTo = task.offsetTop
+
+                let item_mid = task.closest('.item_mid')
+                item_mid.scrollTo(0, scrollTo)
             }
         })
     }
@@ -203,10 +208,3 @@ search_inp.oninput = () => {
         })
     }
 }
-
-let items = document.querySelectorAll('.item')
-items.forEach(item => {
-    item.onclick = () => {
-        item.scrollTo(0, 200)
-    }
-}) 
