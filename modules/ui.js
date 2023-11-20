@@ -5,26 +5,28 @@ export function reload_tasks(arr, places) {
     places.forEach(el => el.innerHTML = "")
 
     for(let item of arr) {
-        let div = document.createElement('div')
+        let task = document.createElement('div')
+        let name =  document.createElement('p')
         let date = document.createElement('p')
         let description = document.createElement('p')
         let participants = document.createElement('p')
 
-        div.classList.add('task')
+        task.classList.add('task')
+        name.classList.add('task_name')
         date.classList.add('time')
         description.classList.add('description')
         participants.classList.add('participants')
-        div.setAttribute('data-id', item.id)
-        div.setAttribute('draggable', true)
+        task.setAttribute('data-id', item.id)
+        task.setAttribute('draggable', true)
 
-        div.innerHTML = item.title
+        name.innerHTML = item.title
         date.innerHTML = item.deadline
         description.innerHTML = item.description
         participants.innerHTML = item.participants
-        places[item.status].append(div)
-        div.append(description,participants, date)
+        places[item.status].append(task)
+        task.append(name,description,participants, date)
 
-        div.ondragstart = dragStart
-        div.ondragend = dragEnd
+        task.ondragstart = dragStart
+        task.ondragend = dragEnd
     }
 }
