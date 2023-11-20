@@ -36,15 +36,29 @@
 
 
             <script>
+                let header = document.querySelector("header")
+
+
+                function makeBodyBlurry() {
+                    document.body.style.filter = 'blur(5px)';
+                }
+
+                function makeBodyClear() {
+                    document.body.style.filter = 'none';
+                }
+
                 function expandInput(input) {
                     input.style.width = '400px';
-                    // document.querySelector('body').style.color = ;
+                    makeBodyBlurry();
                 }
 
                 function shrinkInput(input) {
-                    input.style.width = '200px';
-                    // document.querySelector('.blur-background').style.display = 'none';
+                    input.style.width = '220px';
+                    makeBodyClear();
                 }
+
+
+
 
 
             </script>
