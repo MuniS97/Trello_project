@@ -12,6 +12,8 @@ import { reload_tasks } from "./modules/ui";
 
 export let TASK_BOXES = document.querySelectorAll(".item_mid");
 let trushBin = document.querySelector(".trush_bin");
+export let searchInp = document.querySelector(".searcher_inp");
+let body = document.querySelector("main");
 
 getData("/tasks").then((res) => {
   if (res.status !== 200 && res.status !== 201) return;
@@ -30,9 +32,6 @@ trushBin.ondragenter = ondragenter;
 trushBin.ondragleave = ondragleave;
 trushBin.ondrop = ondropbin;
 
-let searchInp = document.querySelector(".searcher_inp");
-let body = document.querySelector("main");
-
 searchInp.onfocus = () => {
   body.classList.add("blur");
 };
@@ -41,18 +40,23 @@ searchInp.onblur = () => {
 };
 
 searchInp.onkeyup = () => {
-  let val = searchInp.value;
+  let value = searchInp.value.trim();
 
   getData("/tasks").then((res) => {
-    if (res.status !== 200 && res.status !== 201) return;
+    res.data.filter((item) => {
+      let tasks = document.querySelectorAll(".task");
 
-    
-    res.data.filter((task) => {
-      if ((task.title = val)) {
-        console.log(task.title, task.id);
+      if (item.title == value) {
+        tasks.forEach((task) => {
+          task.classList.remove("fond");
+
+          if (task.innerHTML.includes(value)) {
+            let y = task.getBoundingClientRect().y;
+            window.scrollTo({ top: y - 200, left: 0, behavior: "smooth" });
+            task.classList.add("fond");
+          }
+        });
       }
     });
-
-
   });
 };
