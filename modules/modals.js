@@ -199,6 +199,7 @@ search_inp.oninput = () => {
 
                 let item_mid = task.closest('.item_mid')
                 item_mid.scrollTo(0, scrollTo)
+                
             }
         })
     }
