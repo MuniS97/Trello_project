@@ -15,7 +15,7 @@
       "status": "1",
       "deadline": "",
       "id": 1
-    },    
+    },
     {
       "title": "hello",
       "description": "asdd",
@@ -48,6 +48,5 @@
       "deadline": "",
       "id": 3
     }
-    
   ]
 }
