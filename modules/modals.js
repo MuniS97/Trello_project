@@ -124,8 +124,3 @@ form_add.onsubmit = (e) => {
     form_create.reset()
     modal_add.classList.remove('block')
 }
-
-
-
-
-
