@@ -373,6 +373,10 @@ aside {
   top: 50px;
 }
 
+.blur{
+  filter: blur(2px);
+}
+
 .container {
   position: relative;
 }
@@ -676,6 +680,25 @@ input, select{
   width: 85px;
   height: 85px;
 }
+.task{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  .title{
+    font-size: 18px;
+  }
+  .participants{
+    position: absolute;
+    right: 8px;
+    top: 10px;
+  }
+  .deadline{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+  }
+}
 
 .none{
   display: none;
@@ -691,3 +714,6 @@ input, select{
   display: none;
 }
 
+.found{
+  background-color: #f4a69d !important;
+}

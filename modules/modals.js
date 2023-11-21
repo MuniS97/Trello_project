@@ -9,8 +9,6 @@ let aside = document.querySelector("aside");
 let aside_class = document.querySelector(".aside");
 let content = document.querySelector("main");
 
-
-
 open_aside.onclick = () => {
     aside.classList.remove("hide_main");
     aside_class.classList.remove("hide_aside");
