@@ -1,77 +1,56 @@
-import {
-	garbage
-} from "../main";
-import axios from "axios";
-import {
-	editData,
-	getData,
-	deleteData
-} from "./http";
-import { reload_tasks } from "./ui";
+import { removeData, editData } from '../modules/helpers'
+
+let basket_remove = document.querySelector('.basket_remove')
+let basket = document.querySelector('.basket')
 
 export function dragStart() {
-	garbage.classList.add('visible')
-	this.id = "marked";
-	this.className += " hold";
-	setTimeout(() => (this.className = "invisible"), 0);
-	//   console.log(this);
+	this.id = "marked"
+	this.className += ' hold'
+	setTimeout(() => (this.className = 'invisible'), 0)
+
+	basket_remove.style.display = 'block'
+	basket.style.display = 'block'
 }
 
 export function dragEnd() {
-	garbage.classList.remove('visible')
-	this.removeAttribute("id");
-	this.className = "task";
+	this.removeAttribute('id')
+	this.className = 'task'
+
+	basket_remove.style.display = 'none'
+	basket.style.display = 'none'
 }
 
 export function dragOver(event) {
-	event.preventDefault();
+	event.preventDefault()
 }
 
 export function dragEnter(event) {
-	event.preventDefault();
-	this.className += " hovered";
+	event.preventDefault()
+	this.className += ' hovered'
 }
 
 export function dragLeave() {
-	this.className = "item_mid";
+	this.className = 'item_mid'
 }
 
 export function dragDrop() {
-	let marked_div = document.getElementById("marked");
-	let task_id = marked_div.getAttribute("data-id");
-	let box_id = this.getAttribute("data-status");
+	let task = document.getElementById('marked')
+		this.className = 'item_mid';
 
-	this.className = "item_mid";
 
-	this.append(marked_div);
+	editData('/tasks/' + task.dataset.id, {
+		status: this.dataset.status
+	})
+		.then(res => {
 
-	editData("/tasks/" + task_id, {
-			status: box_id
 		})
-		.then((res) => {
-			if (res.status !== 200 && res.status !== 201) return;
-		});
+	this.append(task)
 }
-export function garbagedrop() {
-	let marked_div = document.getElementById("marked");
 
-	let id = marked_div.getAttribute("data-id");
-	if(navigator.onLine) {
-		marked_div.classList.add('invisible')
-		deleteData("/tasks/" + id)
-			.then(res => {
-				if(res.status !== 200 && res.status !== 201) {
-					alert('error')
-				}
-			})
-			marked_div.remove()
-	} else {
-		alert('connection error')
-	}
-}
-export function garbageenter() {
-	garbage.classList.add("garbage_active");
-}
-export function garbageleave() {
-	garbage.classList.remove("garbage_active");
+export function del() {
+	let task = document.getElementById('marked')
+
+	removeData('/tasks/' + task.dataset.id)
+		.then(res => { })
+	task.remove();
 }

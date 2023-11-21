@@ -19,14 +19,14 @@ export async function postData(path, body) {
         console.log(e);
     }
 }
-export async function deleteData(path) {
-  try {
+export async function removeData(path) {
+    try {
     const res = await axios.delete(base_url + path);
 
     return res
-  } catch (e) {
+    } catch (e) {
     console.log(e);
-  }
+    }
 }
 export async function editData(path, body) {
     try {

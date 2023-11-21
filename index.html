@@ -6,7 +6,6 @@
 	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Vite App</title>
-	<link rel="stylesheet" href="./main.css">
 	<link rel="stylesheet" href="./style.scss">
 </head>
 
@@ -15,7 +14,7 @@
     <header>
         <div class="left">
             <div class="logo">
-                <img class="frame" src="./public/img/Frame.svg" alt="">
+                <img class="frame" src="./public/img/Frame.png" alt="">
                 <img class="logo_img" src="./public/img/pseudo.png" alt="">
             </div>
             <div class="btns">
@@ -93,8 +92,10 @@
                 </li>
             </ol>
         </div>
-        <img class="open_aside" id="show" width="32px" height="32px" src="./public/img/arrow_right-removebg-preview.png"
+        <div class="open_aside" >
+            <img id="show" src="./public/img/arrow_right-removebg-preview.png"
             alt="">
+        </div>
     </aside>
     <main class="content">
         <div class="lower_header">
@@ -110,88 +111,98 @@
                 </div>
                 <img class="afer_options" src="./public/img/lw_header_arrow_down.svg" alt="">
             </div>
+            
             <div class="right_header">
                 <img src="./public/img/lw_header_rocket.svg" alt="">
                 <img src="./public/img/lw_header_storm.svg" alt="">
+                
                 <div class="menu_filter">
                     <img src="./public/img/lw_header_menu.svg" alt="">
-                    <p>
-                        Фильтры
-                    </p>
+                    <p> Фильтры </p>
                 </div>
-                <span class="arrow_two">|</span>
+                
+                <div class="arrow_two"></div>
+                
                 <div class="acc">
                     <img src="./public/img/right_header_acc.png" alt="" width="80px">
-                    <p class="add_one">+1</p>
+                    <button class="add_one">Add acc +1</button>
+                    
                     <div class="add_acc">
                         <img src="./public/img/pers_acc_icon.svg" alt="">
-                        <p>Поделиться</p>
+                        <p> Поделиться </p>
                     </div>
                 </div>
                 <img class="share_dots" src="./public/img/lw_header_3dots.svg" alt="">
             </div>
         </div>
+
+
         <div class="container">
             <div class="box">
+
                 <div class="item">
                     <div class="item_top">
                         <span>To-do</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
+
                     <div class="item_mid" data-status="0" >
-                        <!-- <div class="task" >
-                            task
-                        </div>
-                        <div class="task" >
-                            task
-                        </div>
-                        <div class="task" >
-                            task
-                        </div> -->
                     </div>
+
                     <div class="item_bot">
-                        <button>+ Добавить карточку</button>
-                        <img src="./public/img/Frame.png" alt="">
+                        <button class="add_card">+ Добавить карточку</button>
+                        <img class="add_card" src="./public/img/Frame.png" alt="">
                     </div>
                 </div>
+
                 <div class="item">
                     <div class="item_top">
-                        <span>В процессе</span>
+                        <span class="status">in progress</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
+
                     <div class="item_mid" data-status="1" >
-
-
                     </div>
+
                     <div class="item_bot">
-                        <button>+ Добавить карточку</button>
-                        <img src="./public/img/Frame.png" alt="">
+                        <button class="add_card">+ Добавить карточку</button>
+                        <img class="add_card" src="./public/img/Frame.png" alt="">
                     </div>
                 </div>
+
                 <div class="item">
                     <div class="item_top">
-                        <span>Готово</span>
+                        <span class="status">done</span>
                         <button><img src="./public/img/Icon.png" alt=""></button>
                     </div>
-                    <div class="item_mid" data-status="2" > 
 
-                        
+                    <div class="item_mid" data-status="2" >
                     </div>
+
                     <div class="item_bot">
-                        <button>+ Добавить карточку</button>
-                        <img src="./public/img/Frame.png" alt="">
+                        <button class="add_card">+ Добавить карточку</button>
+                        <img class="add_card" src="./public/img/Frame.png" alt="">
                     </div>
                 </div>
+
+
                 <div class="add_column">
                     <button>+ Добавить ещё одну колонку</button>
                 </div>
+
             </div>
         </div>
+
+        <div class="basket_remove"></div>
+        <img class="basket" src="/public/remove_icon.svg" alt="">
+    
     </main>
 
 
-	<div class="modal_main">
-		<button class="button_x">x</button>
+    <div class="modal_main">
+        <button class="button_x">
+            <img src="/public/close_btn.svg" alt="">
+        </button>
 
         <form name="create_new">
             Напишите задачу
@@ -204,24 +215,25 @@
             <select name="participants" id="participants"></select>
 
             Выберите статус
-            <select name="status" id="">
+            <select name="status" id="participans">
                 <option value="0">todo</option>
                 <option value="1">inprogress</option>
                 <option value="2">done</option>
             </select>
 
             Выберите Дедлайн
-            <input type="date" name="deadline" id="">
+            <input type="date" name="deadline" id="" class="date">
 
             <button class="create_btn">Создать задачу</button>
         </form>
     </div>
 
+    <div class="modal_add">
+        <button class="button_x">
+            <img src="/public/close_btn.svg" alt="">
+        </button>
 
-	<div class="modal_add">
-		<button class="button_x">x</button>
-
-		<form name="add_new">
+		<form name="modal_add">
 			Имя Участника
 			<input type="text" name="name">
 
@@ -261,11 +273,13 @@
 				</div>
 			</div>
 
-            <button class="create_btn">Добавить участника</button>
+            <button class="create_acc">Добавить участника</button>
         </form>
     </div>
 
-	<img draggable="true" class="garbage" src="./public/img/garbage-removebg-preview.png" alt="">
+    <div class="black_bg"></div>
+    <div class="blur_bg"></div>
+
     <script type="module" src="/main.js"></script>
     <script type="module" src="/modules/modals.js"></script>
 </body>
