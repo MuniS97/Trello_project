@@ -155,9 +155,9 @@ search_all_tasks.oninput = () => {
     if (searchQuery !== '' && search_all_tasks.value.length > 3) {
         tasks_all.forEach(task => {
             let taskText = task.innerText.toLowerCase();
-            let matchIndex = taskText.indexOf(searchQuery);
+            let indeX = taskText.indexOf(searchQuery);
 
-            if (matchIndex !== -1) {
+            if (indeX !== -1) {
                 task.style.zIndex = '3';
                 task.style.boxShadow = '2px 2px 2px 2px white ';
             }
