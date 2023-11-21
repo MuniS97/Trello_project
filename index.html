@@ -30,45 +30,7 @@
             <div class="searcher">
                 <img width="16px" height="16px" src="./public/img/searcher_icon.svg" alt="">
                 <input class="searcher_inp" type="text" name="searcher" placeholder="Поиск">
-
             </div>
-
-
-            <script>
-                let searchInput = document.querySelector(".searcher_inp");
-
-                function makeBodyBlurry() {
-                   
-                    document.body.style.filter = 'none';
-                }
-
-                function makeBodyClear() {
-                    document.body.style.filter = 'blur(4px)';
-                }
-
-                function expandInput(input) {
-                    input.style.width = '220px';
-                    input.style.filter = '4px';
-                    makeBodyBlurry();
-                }
-                
-                function shrinkInput(input) {
-                    input.style.filter = 'none'; 
-                    input.style.width = '550px';
-                    makeBodyClear();
-                }
-
-   
-                searchInput.addEventListener('focus', function () {
-                    shrinkInput(this);
-                });
-
-                searchInput.addEventListener('blur', function () {
-                    expandInput(this);
-                });
-            </script>
-
-
             <div class="user_info">
                 <img src="./public/img/bell.svg" alt="">
                 <img src="./public/img/q_mark.svg" alt="">
@@ -302,6 +264,24 @@
             <button class="create_btn">Добавить участника</button>
         </form>
     </div>
+
+
+    <script>
+        let search_all_tasks = document.querySelector(".searcher_inp");
+        let background_acide = document.querySelector("aside");
+        let background_color_all = document.querySelector(".content");
+
+        search_all_tasks.onfocus = function () {
+            background_color_all.classList.add("blur");
+            background_acide.classList.add("blur");
+
+            search_all_tasks.onblur = () => {
+                background_color_all.classList.remove("blur");
+                background_acide.classList.remove("blur");
+                task.classList.remove("found");
+            };
+        };
+    </script>
 
     <img draggable="true" class="garbage" src="./public/img/garbage-removebg-preview.png" alt="">
     <script type="module" src="/main.js"></script>

@@ -7,40 +7,6 @@
 body {
   background-color: #cd5a91;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.after_options {
-  cursor: pointer;
-}
-
-.under_arrow {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  z-index: 1;
-  width: 200px;
-  border-radius: 12px;
-}
-
-.under_arrow p {
-  margin: 0;
-  padding: 5px 0;
-  cursor: pointer;
-}
-
-.dropdown.active .under_arrow {
-  display: block;
-}
-
-
 header {
   width: 100%;
   padding: 8px 12px;
@@ -101,11 +67,9 @@ header {
         left: 5%;
       }
       input {
-        transition: width 0.3s ease;
-        width: 400px;
         width: 220px;
         height: 32px;
-        border-radius: 5px; 
+        border-radius: 5px;
         border: 1px solid rgba(166, 197, 226, 0.16);
         color: #8c9bab;
         background: #22272b;
@@ -144,6 +108,9 @@ aside {
     height: 92.4vh;
     transition: 0.6s;
     color: #9fadbc;
+    
+
+
     .prodigy {
       padding: 8px 12px;
       display: flex;
@@ -215,28 +182,12 @@ aside {
   }
 }
 
-// .modal_task_add{
-//   position: absolute;
-//   width: 800px;
-//   height: 400px;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   margin: 0 auto;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   // background-color: ;
-//   form{
-//     width: 300px;
-//   }
-// }
 .blue_bg {
   background-color: blue;
 }
 .contentFlex {
-  transition: 0.8s;
-  width: 80% !important;
+  transition: 0.1s ease;
+  width: 100% !important;
 }
 
 .lower_header {
@@ -269,43 +220,6 @@ aside {
   margin-left: 20px;
   width: 26px;
   height: 26px;
-}
-
-
-.dropdown-container {
-  position: relative;
-  display: inline-block;
-}
-
-.arrow-options {
-  cursor: pointer;
-}
-
-.under-arrow {
-  padding-top: 10px;
-  align-items: center;
-  text-align: center;
-  height: 100px;
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.under-arrow a {
-  text-decoration: none;
-  color: black;
-  padding: 10px 10px;
-  margin: 0px;
-}
-
-.under-arrow hr {
-  margin: 5px 0;
-  border: 0.5px solid #ddd;
 }
 
 .options {
@@ -446,6 +360,10 @@ aside {
   top: 50px;
 }
 
+.blur{
+  filter: blur(2px);
+}
+
 .container {
   position: relative;
 }
@@ -572,7 +490,6 @@ aside {
   background: rgba(255, 255, 255, 0.24);
   height: fit-content;
   text-align: left;
-  height: 50px;
 }
 
 .add_column button {
@@ -750,6 +667,25 @@ input, select{
   width: 85px;
   height: 85px;
 }
+.task{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  .title{
+    font-size: 18px;
+  }
+  .participants{
+    position: absolute;
+    right: 8px;
+    top: 10px;
+  }
+  .deadline{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+  }
+}
 
 .none{
   display: none;
@@ -765,8 +701,6 @@ input, select{
   display: none;
 }
 
-
-.searcher_inp {
-  width: 220px;
-  transition: width 0.3s ease;
+.found{
+  background-color: #f4a69d !important;
 }
