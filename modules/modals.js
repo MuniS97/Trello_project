@@ -79,7 +79,7 @@ form_create.onsubmit = (e) => {
 
     postData('/tasks', task)
         .then(res => {
-            if(res.status !== 200 && res.status !== 201) return 
+            if (res.status !== 200 && res.status !== 201) return
 
             getData('/tasks')
                 .then(res => {
@@ -124,3 +124,25 @@ form_add.onsubmit = (e) => {
     form_create.reset()
     modal_add.classList.remove('block')
 }
+
+
+
+
+let search_all_tasks = document.querySelector(".searcher_inp");
+let background_acide = document.querySelector("aside");
+let background_color_all = document.querySelector(".content");
+
+search_all_tasks.onfocus = function () {
+    background_color_all.classList.add("blur");
+    background_acide.classList.add("blur");
+    search_all_tasks.style.transition = '0.5s ease'
+    search_all_tasks.style.width = '550px';
+
+
+    search_all_tasks.onblur = () => {
+        background_color_all.classList.remove("blur");
+        background_acide.classList.remove("blur");
+        search_all_tasks.style.width = '220px';
+    }
+}
+

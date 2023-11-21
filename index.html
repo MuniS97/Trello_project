@@ -266,28 +266,6 @@
     </div>
 
 
-    <script>
-        let search_all_tasks = document.querySelector(".searcher_inp");
-        let background_acide = document.querySelector("aside");
-        let background_color_all = document.querySelector(".content");
-
-        search_all_tasks.onfocus = function () {
-            background_color_all.classList.add("blur");
-            background_acide.classList.add("blur");
-            search_all_tasks.style.transition = '0.5s ease'
-            search_all_tasks.style.width = '550px';
-
-
-            search_all_tasks.onblur = () => {
-                background_color_all.classList.remove("blur");
-                background_acide.classList.remove("blur");
-                search_all_tasks.style.width = '220px';
-            }
-        }
-        
-    
-    </script>
-
     <img draggable="true" class="garbage" src="./public/img/garbage-removebg-preview.png" alt="">
     <script type="module" src="/main.js"></script>
     <script type="module" src="/modules/modals.js"></script>
