@@ -765,3 +765,8 @@ input, select{
   display: none;
 }
 
+
+.searcher_inp {
+  width: 220px;
+  transition: width 0.3s ease;
+}
