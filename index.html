@@ -274,13 +274,17 @@
         search_all_tasks.onfocus = function () {
             background_color_all.classList.add("blur");
             background_acide.classList.add("blur");
+            search_all_tasks.style. transition = '0.5s ease'
+            search_all_tasks.style.width = '550px';
+
 
             search_all_tasks.onblur = () => {
                 background_color_all.classList.remove("blur");
                 background_acide.classList.remove("blur");
+                search_all_tasks.style.width = '220px';
                 task.classList.remove("found");
-            };
-        };
+            }
+        }
     </script>
 
     <img draggable="true" class="garbage" src="./public/img/garbage-removebg-preview.png" alt="">
