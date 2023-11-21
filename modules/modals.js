@@ -158,7 +158,6 @@ search_all_tasks.oninput = () => {
             let indeX = taskText.indexOf(searchQuery);
 
             if (indeX !== -1) {
-                task.style.zIndex = '3';
                 task.style.boxShadow = '2px 2px 2px 2px white ';
             }
         });
