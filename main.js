@@ -27,3 +27,4 @@ import {
   garbage.ondragenter = garbageenter;
   garbage.ondragleave= garbageleave;
   garbage.ondrop = garbagedrop;
+  
