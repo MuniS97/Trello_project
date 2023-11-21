@@ -128,6 +128,7 @@ form_add.onsubmit = (e) => {
 
 
 
+
 let search_all_tasks = document.querySelector(".searcher_inp");
 let background_acide = document.querySelector("aside");
 let background_color_all = document.querySelector(".content");
@@ -146,3 +147,20 @@ search_all_tasks.onfocus = function () {
     }
 }
 
+
+search_all_tasks.oninput = () => {
+    let searchQuery = search_all_tasks.value.trim().toLowerCase();
+    let tasks_all = document.querySelectorAll('.task');
+
+    if (searchQuery !== '' && search_all_tasks.value.length > 3) {
+        tasks_all.forEach(task => {
+            let taskText = task.innerText.toLowerCase();
+            let matchIndex = taskText.indexOf(searchQuery);
+
+            if (matchIndex !== -1) {
+                task.style.zIndex = '3';
+                task.style.boxShadow = '2px 2px 2px 2px white ';
+            }
+        });
+    } 
+};
