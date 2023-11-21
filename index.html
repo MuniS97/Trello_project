@@ -49,17 +49,17 @@
 
                 function expandInput(input) {
                     input.style.width = '220px';
-                    input.style.filter = '4px'; // Убираем фильтр размытия с инпута
+                    input.style.filter = '4px';
                     makeBodyBlurry();
                 }
                 
                 function shrinkInput(input) {
-                    input.style.filter = 'none'; // Применяем фильтр размытия к инпуту
+                    input.style.filter = 'none'; 
                     input.style.width = '550px';
                     makeBodyClear();
                 }
 
-                // Add event listener to the input
+   
                 searchInput.addEventListener('focus', function () {
                     shrinkInput(this);
                 });
