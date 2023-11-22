@@ -9,17 +9,6 @@ import {
 } from "./modules/dragNdrop";
 import { getData } from "./modules/http";
 import { reload_tasks, searcher_fun } from "./modules/ui";
-// let searcher = document.querySelector(".searcher_inp");
-// let main = document.querySelector(".content");
-// let aside = document.querySelector("aside");
-// searcher.onfocus = function() {
-//   main.classList.add("blur");
-//   aside.classList.add("blur");
-// };
-// searcher.onblur = function() {
-//   main.classList.remove("blur");
-//   aside.classList.remove("blur");
-// };
 
 export let TASK_BOXES = document.querySelectorAll(".item_mid");
 export let garbage = document.querySelector(".garbage");
